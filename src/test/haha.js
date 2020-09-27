@@ -4,6 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
 export default class haha extends Component {
+    componentDidMount(){
+        document.title = "haha";
+    }
+    
     render(){
         return (
             <div class="alert alert-danger alert-dismissible fade show" role="alert">

@@ -6,16 +6,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
 export default class test extends Component {
-  render() {
-    return (
+    componentDidMount(){
+        document.title = "test";
+    }
+    render() {
+        return (
 
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <p>test page</p>
-        <Link to="/haha"><Button>to haha</Button></Link>
-        <Link to="/"><Button>back to main</Button></Link>
-      </div>
-    );
-  }
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <p>test page</p>
+                <Link to="/haha"><Button>to haha</Button></Link>
+                <Link to="/"><Button>back to main</Button></Link>
+            </div>
+        );
+    }
 
 }
 
