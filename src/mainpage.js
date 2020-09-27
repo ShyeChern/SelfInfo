@@ -13,6 +13,7 @@ export default function Mainpage() {
 
     useEffect(() => {
         console.log("Will run only on every render");
+        document.title = "Main Page";
     });
 
     useEffect(() => {
