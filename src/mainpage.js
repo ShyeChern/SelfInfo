@@ -11,12 +11,13 @@ export default function Mainpage() {
     const [count, setCount] = useState(0);
     const [count1, setCount1] = useState(1);
 
-    useEffect(() => {
-        console.log("Will run only on every render");
-        document.title = "Main Page";
-    });
+    // useEffect(() => {
+    //     console.log("Will run only on every render");
+    //     document.title = "Shye Chern";
+    // });
 
     useEffect(() => {
+        document.title = "Shye Chern";
         console.log("Will run only on first render");
     }, []);
 
@@ -28,11 +29,11 @@ export default function Mainpage() {
         // some task like calling service
         // to avoid Can't perform a React state update on an unmounted component. 
         // This is a no-op, but it indicates a memory leak in your application
-
+        console.log("Will run on every render");
 
         return () => {
-            console.log("I do cleanups");
-            console.log("will first run on component mount then, will run before useeffect and lastly before unmounting");
+            // console.log("I do cleanups");
+            // console.log("will first run on component mount then, will run before useeffect and lastly before unmounting");
         };
     });
 
