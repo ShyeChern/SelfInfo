@@ -1,7 +1,5 @@
 /*eslint-disable*/
 import React from "react";
-import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
 
@@ -12,7 +10,7 @@ import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons";
+import { Apps, CloudDownload, Home, Person, Work, Email } from "@material-ui/icons";
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
@@ -26,7 +24,7 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
     <List className={classes.list}>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           buttonText="Components"
@@ -48,23 +46,56 @@ export default function HeaderLinks(props) {
             </a>
           ]}
         />
+      </ListItem> */}
+      <ListItem className={classes.listItem}>
+        <Link to="/" style={{ textDecoration: "none", color: 'inherit' }}>
+          <Button
+            // href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
+            // target="_blank"
+            color="transparent"
+            className={classes.navLink}
+          >
+            <Home className={classes.icons} /> Home
+          </Button>
+        </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button
-          href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-          <CloudDownload className={classes.icons} /> Download
-        </Button>
+        <Link to="/profile" style={{ textDecoration: "none", color: 'inherit' }}>
+          <Button
+            // href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
+            // target="_blank"
+            color="transparent"
+            className={classes.navLink}
+          >
+            <Person className={classes.icons} /> Profile
+          </Button>
+        </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
-        {/*<Tooltip title="Delete">
-          <IconButton aria-label="Delete">
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>*/}
+        <Link to="/project" style={{ textDecoration: "none", color: 'inherit' }}>
+          <Button
+            // href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
+            // target="_blank"
+            color="transparent"
+            className={classes.navLink}
+          >
+            <Work className={classes.icons} /> Project
+          </Button>
+        </Link>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Link to="/contact" style={{ textDecoration: "none", color: 'inherit' }}>
+          <Button
+            // href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
+            // target="_blank"
+            color="transparent"
+            className={classes.navLink}
+          >
+            <Email className={classes.icons} /> Contact
+          </Button>
+        </Link>
+      </ListItem>
+      {/* <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-twitter"
           title="Follow us on twitter"
@@ -114,7 +145,7 @@ export default function HeaderLinks(props) {
             <i className={classes.socialIcons + " fab fa-instagram"} />
           </Button>
         </Tooltip>
-      </ListItem>
+      </ListItem> */}
     </List>
   );
 }

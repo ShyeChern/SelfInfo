@@ -3,8 +3,8 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
-// @material-ui/icons
+// react components for routing our app without refresh
+import { Link } from "react-router-dom";
 
 // core components
 import Header from "components/Header/Header.js";
@@ -34,7 +34,7 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="Material Kit React"
+        brand="Shye Chern"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -43,6 +43,7 @@ export default function LandingPage(props) {
         }}
         {...rest}
       />
+
       <Parallax filter image={require("assets/img/landing-bg.jpg")}>
         <div className={classes.container}>
           <GridContainer>
@@ -55,16 +56,18 @@ export default function LandingPage(props) {
                 impression.
               </h4>
               <br />
-              <Button
-                color="danger"
-                size="lg"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fas fa-play" />
-                Watch video
-              </Button>
+              <Link to="/profile" style={{ textDecoration: "none", color: 'inherit' }}>
+                <Button
+                  color="danger"
+                  size="lg"
+                  // href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
+                  // target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ justifyContent: "none" }}
+                >
+                  View My Profile&nbsp;<i className="fas fa-angle-right" />
+                </Button>
+              </Link>
             </GridItem>
           </GridContainer>
         </div>

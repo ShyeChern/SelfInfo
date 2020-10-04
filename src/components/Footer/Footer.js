@@ -31,7 +31,7 @@ export default function Footer(props) {
       <div className={classes.container}>
         <div className={classes.left}>
           <List className={classes.list}>
-            <ListItem className={classes.inlineBlock}>
+            {/* <ListItem className={classes.inlineBlock}>
               <a
                 href="https://www.creative-tim.com/?ref=mkr-footer"
                 className={classes.block}
@@ -66,20 +66,18 @@ export default function Footer(props) {
               >
                 Licenses
               </a>
-            </ListItem>
+            </ListItem> */}
           </List>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
+          made by{" "}
           <a
-            href="https://www.creative-tim.com?ref=mkr-footer"
+            href="#"
             className={aClasses}
-            target="_blank"
           >
-            Creative Tim
-          </a>{" "}
-          for a better web.
+            Shye Chern
+          </a>
+          {" "} using React &amp; Heroku, {new Date().getFullYear()}
         </div>
       </div>
     </footer>
