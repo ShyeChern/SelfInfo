@@ -18,9 +18,7 @@ import Parallax from "components/Parallax/Parallax.js";
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
-import ProductSection from "./Sections/ProductSection.js";
 import TeamSection from "./Sections/TeamSection.js";
-import WorkSection from "./Sections/WorkSection.js";
 
 const dashboardRoutes = [];
 
@@ -49,7 +47,7 @@ export default function LandingPage(props) {
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>Your Story Starts With Us.</h1>
-              <h4>
+              <h4 style={{ fontStyle: "italic" }}>
                 Every landing page needs a small description after the big bold
                 title, that{"'"}s why we added this text here. Add here all the
                 information that can make you or your product create the first
@@ -74,9 +72,7 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <ProductSection />
           <TeamSection />
-          <WorkSection />
         </div>
       </div>
       <Footer />

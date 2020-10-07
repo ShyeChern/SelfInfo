@@ -17,7 +17,7 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
 
-import profile from "assets/img/faces/christian.jpg";
+import profile from "assets/img/faces/shyechern.jpg";
 
 import studio1 from "assets/img/examples/studio-1.jpg";
 import studio2 from "assets/img/examples/studio-2.jpg";
@@ -31,6 +31,9 @@ import work4 from "assets/img/examples/mariya-georgieva.jpg";
 import work5 from "assets/img/examples/clem-onojegaw.jpg";
 
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
+
+// Sections for this page
+import ProductSection from "./Sections/ProductSection.js";
 
 const useStyles = makeStyles(styles);
 
@@ -47,7 +50,7 @@ export default function ProfilePage(props) {
     <div>
       <Header
         color="transparent"
-        brand="Material Kit React"
+        brand="Shye Chern"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -56,7 +59,16 @@ export default function ProfilePage(props) {
         }}
         {...rest}
       />
-      <Parallax small filter image={require("assets/img/profile-bg.jpg")} />
+      <Parallax small filter image={require("assets/img/profile-bg.jpg")} >
+        <div className={classes.container} style={{ zIndex: 12, color: "#FFFFFF" }}>
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={6}>
+              <h1 className={classes.title} style={{ color: "#FFFFFF", marginTop: 0 }}>Profile</h1>
+              <h4 style={{ fontStyle: "italic" }}>Details about myself</h4>
+            </GridItem>
+          </GridContainer>
+        </div>
+      </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
           <div className={classes.container}>
@@ -67,8 +79,9 @@ export default function ProfilePage(props) {
                     <img src={profile} alt="..." className={imageClasses} />
                   </div>
                   <div className={classes.name}>
-                    <h3 className={classes.title}>Christian Louboutin</h3>
-                    <h6>DESIGNER</h6>
+                    <h3 className={classes.title}>Lim Shye Chern</h3>
+                    <h6></h6>
+                    {/* <h6>Software Developer</h6> */}
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-twitter"} />
                     </Button>
@@ -92,6 +105,10 @@ export default function ProfilePage(props) {
             </div>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
+
+                <ProductSection />
+
+                
                 <NavPills
                   alignCenter
                   color="primary"

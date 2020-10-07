@@ -72,7 +72,7 @@ export default function ProfilePage(props) {
     <div>
       <Header
         color="transparent"
-        brand="Material Kit React"
+        brand="Shye Chern"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -81,7 +81,16 @@ export default function ProfilePage(props) {
         }}
         {...rest}
       />
-      <Parallax small filter image={require("assets/img/profile-bg.jpg")} />
+      <Parallax small filter image={require("assets/img/profile-bg.jpg")} >
+        <div className={classes.container} style={{ zIndex: 12, color: "#FFFFFF" }}>
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={6}>
+              <h1 className={classes.title} style={{ color: "#FFFFFF" , marginTop: 0 }}>Project</h1>
+              <h4 style={{ fontStyle: "italic" }}>Some of my past project</h4>
+            </GridItem>
+          </GridContainer>
+        </div>
+      </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
           <div className={classes.container}>

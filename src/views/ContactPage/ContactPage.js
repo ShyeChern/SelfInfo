@@ -1,100 +1,73 @@
-import React, { Component, useEffect, useRef, useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Route, Link, useLocation } from "react-router-dom";
+import React from "react";
+// nodejs library that concatenates classes
+import classNames from "classnames";
+// @material-ui/core components
+import { makeStyles } from "@material-ui/core/styles";
+// @material-ui/icons
+import Camera from "@material-ui/icons/Camera";
+import Palette from "@material-ui/icons/Palette";
+import Favorite from "@material-ui/icons/Favorite";
+// core components
+import Header from "components/Header/Header.js";
+import Footer from "components/Footer/Footer.js";
+import Button from "components/CustomButtons/Button.js";
+import GridContainer from "components/Grid/GridContainer.js";
+import GridItem from "components/Grid/GridItem.js";
+import HeaderLinks from "components/Header/HeaderLinks.js";
+import Parallax from "components/Parallax/Parallax.js";
 
-import dotenv from 'dotenv'
-dotenv.config();
 
-export default function Contact() {
-    const [count, setCount] = useState(0);
-    const [count1, setCount1] = useState(1);
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+import styles from "assets/jss/material-kit-react/views/profilePage.js";
 
-    // useEffect(() => {
-    //     console.log("Will run only on every render");
-    //     document.title = "Shye Chern";
-    // });
+// Sections for this page
+import WorkSection from "./Sections/WorkSection.js";
 
-    useEffect(() => {
-        document.title = "Shye Chern";
-        console.log("Will run only on first render");
-    }, []);
+const useStyles = makeStyles(styles);
 
-    useEffect(() => {
-        console.log("Will run only everytime x changes");
-    }, [count, count1]);
+export default function ContactPage(props) {
+    const classes = useStyles();
 
-    useEffect(() => {
-        // some task like calling service
-        // to avoid Can't perform a React state update on an unmounted component. 
-        // This is a no-op, but it indicates a memory leak in your application
-        console.log("Will run on every render");
+    const { ...rest } = props;
+    const imageClasses = classNames(
+        classes.imgRaised,
+        classes.imgRoundedCircle,
+        classes.imgFluid
+    );
 
-        return () => {
-            // console.log("I do cleanups");
-            // console.log("will first run on component mount then, will run before useeffect and lastly before unmounting");
-        };
-    });
-
-    const sendEmail = () => {
-        const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-        const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-        const userId = process.env.REACT_APP_EMAILJS_USER_ID;
-        const subject = "Email from Heroku Sample App";
-
-        window.emailjs.send(
-            serviceId, templateId,
-            { senderName: name, subject: subject, message: message, senderEmail: email }
-        ).then(res => {
-            console.log('Email successfully sent!')
-        })
-            // Handle errors here however you like, or use a React error boundary
-            .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
-    }
-
+    const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+    
+    // add facebook / whatsapp / any other ways to contact
     return (
         <div>
-            mainpagesdf<br />
-            <Link to="/test">to test</Link>
-            <Link to="/haha"><Button>to haha</Button></Link>
-            <p>You clicked count {count} times</p>
-            <button onClick={() => setCount(count + 1)}>Count</button>
-            <p>You clicked count1 {count1} times</p>
-            <button onClick={() => setCount1(count1 + 1)}>Count1</button>
-
-            <form className="test-mailing">
-                <h1>Let's see if it works</h1>
-                <div>
-                    <textarea
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="Your name"
-                        required
-                        value={name}
-                        style={{ width: '100%', height: '150px' }}
-                    />
-                    <textarea
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Your email"
-                        required
-                        value={email}
-                        style={{ width: '100%', height: '150px' }}
-                    />
-                    <textarea
-                        onChange={(e) => setMessage(e.target.value)}
-                        placeholder="Your message"
-                        required
-                        value={message}
-                        style={{ width: '100%', height: '150px' }}
-                    />
+            <Header
+                color="transparent"
+                brand="Shye Chern"
+                rightLinks={<HeaderLinks />}
+                fixed
+                changeColorOnScroll={{
+                    height: 200,
+                    color: "white"
+                }}
+                {...rest}
+            />
+            <Parallax small filter image={require("assets/img/profile-bg.jpg")} >
+                <div className={classes.container} style={{ zIndex: 12, color: "#FFFFFF" }}>
+                    <GridContainer>
+                        <GridItem xs={12} sm={12} md={6}>
+                            <h1 className={classes.title} style={{ color: "#FFFFFF", marginTop: 0 }}>Contact</h1>
+                            <h4 style={{ fontStyle: "italic" }}>Ways to contact me</h4>
+                        </GridItem>
+                    </GridContainer>
                 </div>
-                <input type="button" value="Submit" className="btn btn--submit" onClick={sendEmail} />
-            </form>
-            <p>you will receive auto generate email Check if it is at junk </p>
+            </Parallax>
+            <div className={classNames(classes.main, classes.mainRaised)}>
+                <div>
+                    <div className={classes.container}>
+                        <WorkSection />
+                    </div>
+                </div>
+            </div>
+            <Footer />
         </div>
-    )
-
+    );
 }
-

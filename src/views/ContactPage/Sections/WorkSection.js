@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -12,10 +12,25 @@ import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
 
+import { sendEmail } from "util/sendEmail.js"
+
+import dotenv from 'dotenv'
+dotenv.config();
+
 const useStyles = makeStyles(styles);
 
 export default function WorkSection() {
   const classes = useStyles();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const sendMessage = () => {
+    sendEmail(name, email, message).then(res => {
+      console.log(res === true ? "Email successfully sent!" : res.text)
+    });
+
+  }
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
@@ -36,6 +51,9 @@ export default function WorkSection() {
                   formControlProps={{
                     fullWidth: true
                   }}
+                  inputProps={{
+                    onChange: (e) => { setName(e.target.value) }
+                  }}
                 />
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
@@ -44,6 +62,9 @@ export default function WorkSection() {
                   id="email"
                   formControlProps={{
                     fullWidth: true
+                  }}
+                  inputProps={{
+                    onChange: (e) => { setEmail(e.target.value) }
                   }}
                 />
               </GridItem>
@@ -58,9 +79,12 @@ export default function WorkSection() {
                   multiline: true,
                   rows: 5
                 }}
+                inputProps={{
+                  onChange: (e) => { setMessage(e.target.value) }
+                }}
               />
               <GridItem xs={12} sm={12} md={4}>
-                <Button color="primary">Send Message</Button>
+                <Button color="primary" onClick={() => sendMessage()}>Send Message</Button>
               </GridItem>
             </GridContainer>
           </form>
