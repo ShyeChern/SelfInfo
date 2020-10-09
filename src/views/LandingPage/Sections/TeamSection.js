@@ -37,61 +37,61 @@ export default function TeamSection() {
       <h2 className={classes.title}>Site List</h2>
       <div>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={12}>
+          <GridItem xs={12} sm={12} md={6}>
             <Card plain>
-              <Link to="/">
-                <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                  <img src={team3} alt="..." className={imageClasses} />
-                </GridItem>
-                <h4 className={classes.cardTitle}>
-                  Landing Page
-                <br />
-                  <small className={classes.smallTitle}>Model</small>
-                </h4>
-              </Link>
+              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                <Link to="/">
+                  <img src={team3} alt="Landing Page" className={imageClasses} />
+                  <h4 className={classes.cardTitle}>
+                    Landing Page
+                  <br />
+                    <small className={classes.smallTitle} style={{ fontStyle: "italic" }}>Click to view the page</small>
+                  </h4>
+                </Link>
+              </GridItem>
             </Card>
-          {/* see whether need underline or not and make card carousel? with background image width 100% */}
+            {/* see whether need underline or not and make card carousel? with background image width 100% */}
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={6}>
             <Card plain>
-              <Link to="/profile">
-                <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                  <img src={team3} alt="..." className={imageClasses} />
-                </GridItem>
-                <h4 className={classes.cardTitle}>
-                  Profile Page
-                <br />
-                  <small className={classes.smallTitle}>Model</small>
-                </h4>
-              </Link>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
-            <Card plain>
-              <Link to="/project">
-                <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                  <img src={team3} alt="..." className={imageClasses} />
-                </GridItem>
-                <h4 className={classes.cardTitle}>
-                  Project Page
-                <br />
-                  <small className={classes.smallTitle}>Designer</small>
-                </h4>
-              </Link>
+              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                <Link to="/profile">
+                  <img src={team3} alt="Profile Page" className={imageClasses} />
+                  <h4 className={classes.cardTitle}>
+                    Profile Page
+                  <br />
+                  <small className={classes.smallTitle} style={{ fontStyle: "italic" }}>Click to view the page</small>
+                  </h4>
+                </Link>
+              </GridItem>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={6}>
             <Card plain>
-              <Link to="/contact">
-                <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                  <img src={team3} alt="..." className={imageClasses} />
-                </GridItem>
-                <h4 className={classes.cardTitle}>
-                  Contact Page
-                <br />
-                  <small className={classes.smallTitle}>Model</small>
-                </h4>
-              </Link>
+              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                <Link to="/project">
+                  <img src={team3} alt="Project Page" className={imageClasses} />
+                  <h4 className={classes.cardTitle}>
+                    Project Page
+                  <br />
+                  <small className={classes.smallTitle} style={{ fontStyle: "italic" }}>Click to view the page</small>
+                  </h4>
+                </Link>
+              </GridItem>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={6}>
+            <Card plain>
+              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                <Link to="/contact">
+                  <img src={team3} alt="Contact Page" className={imageClasses} />
+                  <h4 className={classes.cardTitle}>
+                    Contact Page
+                  <br />
+                  <small className={classes.smallTitle} style={{ fontStyle: "italic" }}>Click to view the page</small>
+                  </h4>
+                </Link>
+              </GridItem>
             </Card>
           </GridItem>
         </GridContainer>

@@ -11,7 +11,7 @@ const profilePageStyle = {
       width: "100%",
       margin: "0 auto",
       transform: "translate3d(0, -50%, 0)"
-    }
+    },
   },
   description: {
     margin: "1.071rem auto 0",

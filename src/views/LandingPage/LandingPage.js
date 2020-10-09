@@ -46,12 +46,9 @@ export default function LandingPage(props) {
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}>Your Story Starts With Us.</h1>
+              <h1 className={classes.title}>Hello, I'm Shye Chern</h1>
               <h4 style={{ fontStyle: "italic" }}>
-                Every landing page needs a small description after the big bold
-                title, that{"'"}s why we added this text here. Add here all the
-                information that can make you or your product create the first
-                impression.
+                I'm a software developer. Click the button below to know more about me...
               </h4>
               <br />
               <Link to="/profile" style={{ textDecoration: "none", color: 'inherit' }}>

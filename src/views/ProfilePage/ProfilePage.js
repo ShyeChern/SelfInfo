@@ -34,6 +34,7 @@ import styles from "assets/jss/material-kit-react/views/profilePage.js";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
+import BarSection from "./Sections/BarSection.js";
 
 const useStyles = makeStyles(styles);
 
@@ -46,6 +47,7 @@ export default function ProfilePage(props) {
     classes.imgFluid
   );
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+
   return (
     <div>
       <Header
@@ -76,13 +78,13 @@ export default function ProfilePage(props) {
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.profile}>
                   <div>
-                    <img src={profile} alt="..." className={imageClasses} />
+                    <img src={profile} alt="Profile Picture" className={imageClasses} />
                   </div>
                   <div className={classes.name}>
                     <h3 className={classes.title}>Lim Shye Chern</h3>
                     <h6></h6>
                     {/* <h6>Software Developer</h6> */}
-                    <Button justIcon link className={classes.margin5}>
+                    {/* <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-twitter"} />
                     </Button>
                     <Button justIcon link className={classes.margin5}>
@@ -90,25 +92,62 @@ export default function ProfilePage(props) {
                     </Button>
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-facebook"} />
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </GridItem>
             </GridContainer>
+
+
             <div className={classes.description}>
               <p>
-                An artist of considerable range, Chet Faker — the name taken by
-                Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
-                and records all of his own music, giving it a warm, intimate
-                feel with a solid groove structure.{" "}
+                Explore and learn in the new areas and work in as dynamic stable organization to enhance my
+                knowledge about new and emerging trends in the IT sector as well as finding an opportunity to improve
+                my skills along with the organization objective.
               </p>
             </div>
+            <BarSection />
+            <GridContainer justify="center">
+              <GridItem xs={12} sm={12} md={12}>
+                <div className={classes.profile}>
+                  <h2 className={classes.title}>Skills</h2>
+                </div>
+              </GridItem>
+ 
+              {/* MySQL, HTML, CSS, Javascript, React, React Native, Java */}
+              <GridItem xs={12} sm={12} md={5}>
+                <div className={classes.profile}>
+                  <h5>Date of Birth: <span style={{ color: "#999" }}>8 September 1997</span></h5>
+                </div>
+              </GridItem>
+              <GridItem xs={12} sm={12} md={5}>
+                <div className={classes.profile}>
+                  <h5>Age: <span style={{ color: "#999" }}>{new Date().getFullYear() - 1997}</span></h5>
+                </div>
+              </GridItem>
+              <GridItem xs={12} sm={12} md={5}>
+                <div className={classes.profile}>
+                  <h5>Email: <span style={{ color: "#999" }}>chern-97@hotmail.com</span></h5>
+                </div>
+              </GridItem>
+              <GridItem xs={12} sm={12} md={5}>
+                <div className={classes.profile}>
+                  <h5>Phone No: <span style={{ color: "#999" }}>017-8243395</span></h5>
+                </div>
+              </GridItem>
+
+              <GridItem xs={12} sm={12} md={8}>
+
+              </GridItem>
+
+            </GridContainer>
+
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
 
                 <ProductSection />
 
-                
+
                 <NavPills
                   alignCenter
                   color="primary"

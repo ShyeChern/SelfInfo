@@ -77,9 +77,7 @@ export default function WorkSection() {
                 }}
                 inputProps={{
                   multiline: true,
-                  rows: 5
-                }}
-                inputProps={{
+                  rows: 5,
                   onChange: (e) => { setMessage(e.target.value) }
                 }}
               />
