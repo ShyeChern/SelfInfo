@@ -4,9 +4,9 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
-import Camera from "@material-ui/icons/Camera";
-import Palette from "@material-ui/icons/Palette";
-import Favorite from "@material-ui/icons/Favorite";
+import Language from "@material-ui/icons/Language";
+import Smartphone from "@material-ui/icons/Smartphone";
+import GitHub from "@material-ui/icons/GitHub";
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
@@ -45,6 +45,10 @@ import IconButton from "@material-ui/core/IconButton";
 import Slide from "@material-ui/core/Slide";
 import modalStyle from "assets/jss/material-kit-react/modalStyle.js";
 
+// Sections for this page
+import WebSection from "./Sections/WebSection.js";
+import MobileSection from "./Sections/MobileSection.js";
+
 const useStyles = makeStyles(styles);
 const useModalStyles = makeStyles(modalStyle);
 
@@ -60,6 +64,7 @@ export default function ProfilePage(props) {
   const modalClasses = useModalStyles();
   const [classicModal, setClassicModal] = React.useState(false);
 
+  // github link
 
   const { ...rest } = props;
   const imageClasses = classNames(
@@ -85,7 +90,7 @@ export default function ProfilePage(props) {
         <div className={classes.container} style={{ zIndex: 12, color: "#FFFFFF" }}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title} style={{ color: "#FFFFFF" , marginTop: 0 }}>Project</h1>
+              <h1 className={classes.title} style={{ color: "#FFFFFF", marginTop: 0 }}>Project</h1>
               <h4 style={{ fontStyle: "italic" }}>Some of my past project</h4>
             </GridItem>
           </GridContainer>
@@ -165,118 +170,32 @@ export default function ProfilePage(props) {
             </Dialog>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
+
+                {/* fyp gomed */}
                 <NavPills
                   alignCenter
                   color="primary"
                   tabs={[
                     {
-                      tabButton: "Studio",
-                      tabIcon: Camera,
+                      tabButton: "Web",
+                      tabIcon: Language,
                       tabContent: (
-                        <GridContainer justify="center">
-                          <GridItem xs={12} sm={12} md={4}>
-                            <img
-                              alt="..."
-                              src={studio1}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={studio2}
-                              className={navImageClasses}
-                            />
-                          </GridItem>
-                          <GridItem xs={12} sm={12} md={4}>
-                            <img
-                              alt="..."
-                              src={studio5}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={studio4}
-                              className={navImageClasses}
-                            />
-                          </GridItem>
-                        </GridContainer>
+                        <WebSection />
                       )
                     },
                     {
-                      tabButton: "Work",
-                      tabIcon: Palette,
+                      tabButton: "Mobile",
+                      tabIcon: Smartphone,
                       tabContent: (
-                        <GridContainer justify="center">
-                          <GridItem xs={12} sm={12} md={4}>
-                            <img
-                              alt="..."
-                              src={work1}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={work2}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={work3}
-                              className={navImageClasses}
-                            />
-                          </GridItem>
-                          <GridItem xs={12} sm={12} md={4}>
-                            <img
-                              alt="..."
-                              src={work4}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={work5}
-                              className={navImageClasses}
-                            />
-                          </GridItem>
-                        </GridContainer>
+                        <MobileSection />
                       )
                     },
-                    {
-                      tabButton: "Favorite",
-                      tabIcon: Favorite,
-                      tabContent: (
-                        <GridContainer justify="center">
-                          <GridItem xs={12} sm={12} md={4}>
-                            <img
-                              alt="..."
-                              src={work4}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={studio3}
-                              className={navImageClasses}
-                            />
-                          </GridItem>
-                          <GridItem xs={12} sm={12} md={4}>
-                            <img
-                              alt="..."
-                              src={work2}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={work1}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={studio1}
-                              className={navImageClasses}
-                            />
-                          </GridItem>
-                        </GridContainer>
-                      )
-                    }
+
                   ]}
                 />
+              </GridItem>
+              <GridItem xs={12} sm={12} md={6} style={{ textAlign: "center", margin: 0, marginBottom: 20 }}>
+                <GitHub /><a href="https://github.com/ShyeChern" target="_blank"> Click to view more project at my GitHub </a><GitHub />
               </GridItem>
             </GridContainer>
           </div>

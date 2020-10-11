@@ -40,6 +40,7 @@ export default function NavPills(props) {
         flexContainer: flexContainerClasses,
         indicator: classes.displayNone
       }}
+      variant="fullWidth"
       value={active}
       onChange={handleChange}
       centered={alignCenter}
@@ -78,7 +79,7 @@ export default function NavPills(props) {
       >
         {tabs.map((prop, key) => {
           return (
-            <div className={classes.tabContent} key={key}>
+            <div className={classes.tabContent} key={key} style={{overflowX:"hidden"}}>
               {prop.tabContent}
             </div>
           );
