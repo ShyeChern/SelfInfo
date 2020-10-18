@@ -1,0 +1,51 @@
+.carousel-indicators li {
+    background-color: #989898;
+}
+
+.carousel-indicators .active {
+    background-color: #FFFFFF;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23989898' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23989898' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+.imageContainer {
+    position: relative;
+    border: 0.1px solid #000;
+}
+
+.imageDescriptionLayer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(245, 245, 245, 0.9);
+    color: #000;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transition effect. not necessary */
+    transition: opacity .2s, visibility .2s;
+}
+
+.imageContainer:hover .imageDescriptionLayer {
+    visibility: visible;
+    opacity: 1;
+}
+
+.imageDescription {
+    transition: .2s;
+    transform: translateY(1em);
+}
+
+.imageContainer:hover .imageDescription {
+    transform: translateY(0);
+}

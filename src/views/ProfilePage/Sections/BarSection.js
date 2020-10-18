@@ -24,13 +24,11 @@ const barStyle = {
     }
 };
 
-
-{/* MySQL, HTML, CSS, Javascript, React, React Native, Java */ }
 const skillData = [
     { name: "Javascript", value: 80 },
     { name: "React", value: 70 },
     { name: "React Native", value: 80 },
-    { name: "PHP", value: 70 },
+    { name: "PHP", value: 80 },
     { name: "HTML", value: 60 },
     { name: "CSS", value: 50 },
     { name: "MySQL", value: 70 },
@@ -62,7 +60,7 @@ const Bar = ({ name, value }) => {
 export default function ProductSection() {
     const classes = useStyles();
     return (
-        <div className={barStyle.container}>
+        <div style={barStyle.container}>
             <GridContainer justify="center">
                 <GridItem xs={12} sm={12} md={12}>
                     <div className={classes.profile}>
