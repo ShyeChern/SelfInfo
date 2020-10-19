@@ -10,7 +10,6 @@ import GitHub from "@material-ui/icons/GitHub";
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
-import Button from "components/CustomButtons/Button.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
@@ -21,14 +20,11 @@ import styles from "assets/jss/material-kit-react/views/profilePage.js";
 import css from "assets/css/style.css";
 
 import Slide from "@material-ui/core/Slide";
-import modalStyle from "assets/jss/material-kit-react/modalStyle.js";
 
 // Sections for this page
-import WebSection from "./Sections/WebSection.js";
-import MobileSection from "./Sections/MobileSection.js";
+import ProjectSection from "./Sections/ProjectSection.js";
 
 const useStyles = makeStyles(styles);
-const useModalStyles = makeStyles(modalStyle);
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
@@ -38,19 +34,7 @@ Transition.displayName = "Transition";
 export default function ProfilePage(props) {
   const classes = useStyles();
 
-  //modal to be change
-  const modalClasses = useModalStyles();
-  const [classicModal, setClassicModal] = React.useState(false);
-
-  // github link
-
   const { ...rest } = props;
-  const imageClasses = classNames(
-    classes.imgRaised,
-    classes.imgRoundedCircle,
-    classes.imgFluid
-  );
-  const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
   return (
     <div>
       <Header
@@ -87,14 +71,14 @@ export default function ProfilePage(props) {
                       tabButton: "Web",
                       tabIcon: Language,
                       tabContent: (
-                        <WebSection />
+                        <ProjectSection platform="web" />
                       )
                     },
                     {
                       tabButton: "Mobile",
                       tabIcon: Smartphone,
                       tabContent: (
-                        <MobileSection />
+                        <ProjectSection platform="mobile" />
                       )
                     },
 

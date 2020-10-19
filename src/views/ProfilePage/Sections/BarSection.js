@@ -29,8 +29,8 @@ const skillData = [
     { name: "React", value: 70 },
     { name: "React Native", value: 80 },
     { name: "PHP", value: 80 },
-    { name: "HTML", value: 60 },
-    { name: "CSS", value: 50 },
+    { name: "HTML", value: 70 },
+    { name: "CSS", value: 60 },
     { name: "MySQL", value: 70 },
     { name: "Java", value: 70 }
 ];

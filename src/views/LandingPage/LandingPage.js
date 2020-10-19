@@ -69,6 +69,8 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
+          {/* write blog post or something about problem how you solve etc title detail date time */}
+
           <TeamSection />
         </div>
       </div>

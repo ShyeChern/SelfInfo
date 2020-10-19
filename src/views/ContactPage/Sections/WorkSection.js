@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
-
+import Facebook from "@material-ui/icons/Facebook";
+import WhatsApp from "@material-ui/icons/WhatsApp";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -35,12 +36,34 @@ export default function WorkSection() {
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Work with us</h2>
+          {/* <h2 className={classes.title}>Contact Me</h2> */}
           <h4 className={classes.description}>
-            Divide details about your product or agency work into parts. Write a
-            few lines about each one and contact us about any further
-            collaboration. We will responde get back to you in a couple of
-            hours.
+            You can contact me via...
+          </h4>
+          <center>
+            <Button justIcon link size={"lg"}
+              href="http://m.me/shye.chern"
+              target="_blank"
+            >
+              <Facebook />
+            </Button>
+            <Button justIcon link size={"lg"}
+              href="https://www.facebook.com/shye.chern/"
+              target="_blank"
+            >
+              <Facebook />
+            </Button>
+            <Button justIcon link size={"lg"} disabled>
+              /
+            </Button>
+            <Button justIcon link size={"lg"}
+            href="https://wa.me/+60178243395?text=Hi,%20Shye%20Chern."
+              target="_blank">
+              <WhatsApp />
+            </Button>
+          </center>
+          <h4 className={classes.description}>
+            or by filling up the email form here....
           </h4>
           <form>
             <GridContainer>

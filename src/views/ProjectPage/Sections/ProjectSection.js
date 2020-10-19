@@ -22,17 +22,24 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 Transition.displayName = "Transition";
 
 const webStyle = {
-    container: {
-        textAlign: "center",
-    },
-
+    carouselItem: {
+        margin: "auto"
+    }
 };
+
+const mobileStyle = {
+    carouselItem: {
+        margin: "auto",
+        height: 400
+    }
+}
 
 const WebData = [
     {
         title: "goMed",
-        description: "A medical consultation website",
-        cover: require('assets/img/web/gomed/gomed_cover.png'),
+        description: "A medical consultation website. User can check the disease information and consult with doctor through live chat.",
+        cover: require('assets/img/web/gomed/gomed_cover.jpg'),
+        language: "HTML/CSS/Javascript/PHP",
         image: [
             require('assets/img/web/gomed/gomed_1.png'),
             require('assets/img/web/gomed/gomed_2.png'),
@@ -43,36 +50,56 @@ const WebData = [
     },
 ];
 
-export default function WebSection() {
+const MobileData = [
+    {
+        title: "Jomedic",
+        description: "A medical consultation application. User can make appointment to consult with doctor via video call or live chat.",
+        cover: require('assets/img/mobile/jomedic/jomedic_cover.jpg'),
+        language: "React Native/Node.js",
+        image: [
+            require('assets/img/mobile/jomedic/jomedic_1.jpeg'),
+            require('assets/img/mobile/jomedic/jomedic_2.jpeg'),
+            require('assets/img/mobile/jomedic/jomedic_3.jpeg'),
+            require('assets/img/mobile/jomedic/jomedic_4.jpeg'),
+            require('assets/img/mobile/jomedic/jomedic_5.jpeg'),
+            require('assets/img/mobile/jomedic/jomedic_6.jpeg'),
+            require('assets/img/mobile/jomedic/jomedic_7.jpeg'),
+            require('assets/img/mobile/jomedic/jomedic_8.jpeg'),
+            require('assets/img/mobile/jomedic/jomedic_9.jpeg'),
+        ]
+    },
+];
+
+export default function ProjectSection({ platform }) {
     const modalClasses = useModalStyles();
     const [showModal, setShowModal] = React.useState(false);
     const [title, setTitle] = React.useState("");
     const [description, setDescription] = React.useState("");
+    const [language, setLanguage] = React.useState("");
     const [image, setImage] = React.useState([]);
 
     const Project = ({ data }) => {
         return (
-            // set hover display some description do css and check hover in mobile
-            // add description below image
-            // add frontend backend
-            // code available: yes no github link
-            // live site? link
             <div>
                 <div style={webStyle.imgContainer} class={"imageContainer"}
                     onClick={() => {
                         setTitle(data.title);
                         setDescription(data.description);
                         setImage(data.image);
+                        setLanguage(data.language);
                         setShowModal(true);
                     }} >
                     <img src={data.cover} class="img-fluid" alt={data.title + "_cover_image"} style={{ height: 200 }} />
                     <div class={"imageDescriptionLayer"}>
-                        <div class={"imageDescription"}>John Doe<br/>sdf</div>
+                        <div class={"imageDescription"}>
+                            <b>Develop using</b><br />
+                            <i style={{ fontSize: 20 }}>{data.language}</i>
+                        </div>
+
                     </div>
                 </div>
-                {data.title}
+                <h5>{data.title}</h5>
             </div>
-
 
         )
     }
@@ -113,7 +140,8 @@ export default function WebSection() {
                     id="classic-modal-slide-description"
                     className={modalClasses.modalBody}
                 >
-                    <p>{description}</p>
+                    <p><b>Description:</b> {description}</p>
+                    <p><b>Language used:</b> {language}</p>
                     <Container fluid="sm" style={{ paddingLeft: 0, paddingRight: 0 }}>
                         <Carousel interval={null}>
                             {
@@ -121,11 +149,11 @@ export default function WebSection() {
                                     return (
                                         <Carousel.Item style={{ backgroundColor: "#F5F5F5" }}>
                                             <img
-                                                className="d-block w-100"
+                                                className={platform === 'web' ? "d-block w-100" : "d-block w-40"}
                                                 src={value}
                                                 alt={value}
                                                 key={index}
-                                                style={{ margin: "auto" }}
+                                                style={platform === 'web' ? webStyle.carouselItem : mobileStyle.carouselItem}
                                             />
                                         </Carousel.Item>
                                     )
@@ -139,10 +167,11 @@ export default function WebSection() {
     }
 
     return (
-        <div style={webStyle.container}>
+        <div>
             <GridContainer justify="center">
                 {
-                    WebData.map((value, index) => {
+
+                    (platform === 'web' ? WebData : MobileData).map((value, index) => {
                         return (
                             <GridItem xs={12} sm={12} md={4} style={{ paddingBottom: 30 }}>
                                 <Project data={value} key={index} />
