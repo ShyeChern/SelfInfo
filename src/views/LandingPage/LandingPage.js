@@ -5,7 +5,6 @@ import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
-
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
@@ -14,11 +13,10 @@ import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
-
+// template style
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
-
 // Sections for this page
-import TeamSection from "./Sections/TeamSection.js";
+import PostSection from "./Sections/PostSection.js";
 
 const dashboardRoutes = [];
 
@@ -48,7 +46,7 @@ export default function LandingPage(props) {
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>Hello, I'm Shye Chern</h1>
               <h4 style={{ fontStyle: "italic" }}>
-                I'm a software developer. Click the button below to know more about me...
+                A software developer. Click the button below to know more about me...
               </h4>
               <br />
               <Link to="/profile" style={{ textDecoration: "none", color: 'inherit' }}>
@@ -69,9 +67,7 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          {/* write blog post or something about problem how you solve etc title detail date time */}
-
-          <TeamSection />
+          <PostSection />
         </div>
       </div>
       <Footer />

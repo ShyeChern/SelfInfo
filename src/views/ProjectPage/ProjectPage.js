@@ -15,12 +15,10 @@ import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
-
+import Slide from "@material-ui/core/Slide";
+// template style and own defined style (css is used)
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 import css from "assets/css/style.css";
-
-import Slide from "@material-ui/core/Slide";
-
 // Sections for this page
 import ProjectSection from "./Sections/ProjectSection.js";
 

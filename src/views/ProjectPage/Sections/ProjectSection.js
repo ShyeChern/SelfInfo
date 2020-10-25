@@ -100,10 +100,10 @@ export default function ProjectSection({ platform }) {
                 </div>
                 <h5>{data.title}</h5>
             </div>
-
         )
     }
 
+    // display modal when clicked
     const Modal = () => {
         return (
             <Dialog
@@ -170,7 +170,6 @@ export default function ProjectSection({ platform }) {
         <div>
             <GridContainer justify="center">
                 {
-
                     (platform === 'web' ? WebData : MobileData).map((value, index) => {
                         return (
                             <GridItem xs={12} sm={12} md={4} style={{ paddingBottom: 30 }}>

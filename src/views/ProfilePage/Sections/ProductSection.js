@@ -1,17 +1,15 @@
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
 // @material-ui/icons
 import FastForward from '@material-ui/icons/FastForward';
-import Forum from '@material-ui/icons/Forum';
 import ImportContacts from '@material-ui/icons/ImportContacts';
 import Favorite from '@material-ui/icons/Favorite';
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import InfoArea from "components/InfoArea/InfoArea.js";
-
+// template style
 import styles from "assets/jss/material-kit-react/views/landingPageSections/productStyle.js";
 
 const useStyles = makeStyles(styles);

@@ -18,12 +18,17 @@ import profile from "assets/img/faces/shyechern.jpg";
 // template style
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 // Sections for this page
-import ProductSection from "./Sections/ProductSection.js";
-import BarSection from "./Sections/BarSection.js";
 
 const useStyles = makeStyles(styles);
 
-export default function ProfilePage(props) {
+
+// back to landing page button or go to next post?
+
+// write blog post or something about problem how you solve etc title detail date time 
+
+// need a post page to display or filter all post using navigation tab ( a record of some problems that  i met in coding or what i have learn so far)
+
+export default function PostPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
   const imageClasses = classNames(
@@ -76,18 +81,14 @@ export default function ProfilePage(props) {
 
             <div className={classes.description}>
               <p>
-                Explore and learn in the new areas and work in as dynamic stable organization to enhance my
-                knowledge about new and emerging trends in the IT sector as well as finding an opportunity to improve
-                my skills along with the organization objective.
+                Use navigation tab
               </p>
             </div>
             
-            <BarSection />
-            <ProductSection />
 
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6} style={{ textAlign: "center", margin: 0, marginBottom: 20 }}>
-                <Link to="/project" style={{ textDecoration: "none", color: 'inherit' }}>
+                <Link to="/post/useeffect" style={{ textDecoration: "none", color: 'inherit' }}>
                   <Button
                     color="danger"
                     size="lg"
@@ -96,7 +97,7 @@ export default function ProfilePage(props) {
                     rel="noopener noreferrer"
                     style={{ justifyContent: "none" }}
                   >
-                    View My Project Now&nbsp;<i className="fas fa-angle-right" />
+                    View post&nbsp;<i className="fas fa-angle-right" />
                   </Button>
                 </Link>
               </GridItem>

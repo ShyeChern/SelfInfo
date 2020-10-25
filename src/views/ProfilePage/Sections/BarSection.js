@@ -4,7 +4,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-
+// template style
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 const useStyles = makeStyles(styles);
 

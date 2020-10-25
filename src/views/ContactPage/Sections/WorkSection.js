@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
 // @material-ui/icons
 import Facebook from "@material-ui/icons/Facebook";
 import WhatsApp from "@material-ui/icons/WhatsApp";
@@ -9,16 +8,14 @@ import WhatsApp from "@material-ui/icons/WhatsApp";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
-
+// template style
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
-
-
+// boostrap component
 import Alert from 'react-bootstrap/Alert';
 import Form from 'react-bootstrap/Form';
-
+// email function
 import { sendEmail } from "util/sendEmail.js";
-
-
+// .env
 import dotenv from 'dotenv'
 dotenv.config();
 
@@ -34,7 +31,6 @@ export default function WorkSection() {
 
     const sendMessage = () => {
         setErrorMessage("");
-        //refine code
         if (name === "" || email === "" || message === "") {
             setSendEmailSuccess(false);
             setErrorMessage("Please fill in all the field")
