@@ -5,7 +5,7 @@ export function sendEmail(name, email, message) {
     const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
     const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
     // userId not necessary because already initialize in the index.html
-    const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+    // const userId = process.env.REACT_APP_EMAILJS_USER_ID;
     const subject = "Email from Heroku Sample App";
 
     const emailResult = window.emailjs.send(

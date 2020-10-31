@@ -16,7 +16,7 @@ import Parallax from "components/Parallax/Parallax.js";
 // template style
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 // Sections for this page
-import PostSection from "./Sections/PostSection.js";
+import ArticleSection from "./Sections/ArticleSection.js";
 
 const dashboardRoutes = [];
 
@@ -67,7 +67,7 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <PostSection />
+          <ArticleSection />
         </div>
       </div>
       <Footer />

@@ -35,6 +35,10 @@ export default function CustomTabs(props) {
       <CardHeader color={headerColor} plain={plainTabs}>
         {title !== undefined ? <div className={cardTitle}>{title}</div> : null}
         <Tabs
+          indicatorColor="primary"
+          textColor="primary"
+          variant="scrollable"
+          scrollButtons="on"
           value={value}
           onChange={handleChange}
           classes={{
@@ -50,8 +54,8 @@ export default function CustomTabs(props) {
                   typeof prop.tabIcon === "string" ? (
                     <Icon>{prop.tabIcon}</Icon>
                   ) : (
-                    <prop.tabIcon />
-                  )
+                      <prop.tabIcon />
+                    )
               };
             }
             return (

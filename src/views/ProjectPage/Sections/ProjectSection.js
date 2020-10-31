@@ -38,14 +38,14 @@ const WebData = [
     {
         title: "goMed",
         description: "A medical consultation website. User can check the disease information and consult with doctor through live chat.",
-        cover: require('assets/img/web/gomed/gomed_cover.jpg'),
+        cover: require('assets/img/project/web/gomed/gomed_cover.jpg'),
         language: "HTML/CSS/Javascript/PHP",
         image: [
-            require('assets/img/web/gomed/gomed_1.png'),
-            require('assets/img/web/gomed/gomed_2.png'),
-            require('assets/img/web/gomed/gomed_3.png'),
-            require('assets/img/web/gomed/gomed_4.png'),
-            require('assets/img/web/gomed/gomed_5.png')
+            require('assets/img/project/web/gomed/gomed_1.png'),
+            require('assets/img/project/web/gomed/gomed_2.png'),
+            require('assets/img/project/web/gomed/gomed_3.png'),
+            require('assets/img/project/web/gomed/gomed_4.png'),
+            require('assets/img/project/web/gomed/gomed_5.png')
         ]
     },
 ];
@@ -54,18 +54,18 @@ const MobileData = [
     {
         title: "Jomedic",
         description: "A medical consultation application. User can make appointment to consult with doctor via video call or live chat.",
-        cover: require('assets/img/mobile/jomedic/jomedic_cover.jpg'),
+        cover: require('assets/img/project/mobile/jomedic/jomedic_cover.jpg'),
         language: "React Native/Node.js",
         image: [
-            require('assets/img/mobile/jomedic/jomedic_1.jpeg'),
-            require('assets/img/mobile/jomedic/jomedic_2.jpeg'),
-            require('assets/img/mobile/jomedic/jomedic_3.jpeg'),
-            require('assets/img/mobile/jomedic/jomedic_4.jpeg'),
-            require('assets/img/mobile/jomedic/jomedic_5.jpeg'),
-            require('assets/img/mobile/jomedic/jomedic_6.jpeg'),
-            require('assets/img/mobile/jomedic/jomedic_7.jpeg'),
-            require('assets/img/mobile/jomedic/jomedic_8.jpeg'),
-            require('assets/img/mobile/jomedic/jomedic_9.jpeg'),
+            require('assets/img/project/mobile/jomedic/jomedic_1.jpeg'),
+            require('assets/img/project/mobile/jomedic/jomedic_2.jpeg'),
+            require('assets/img/project/mobile/jomedic/jomedic_3.jpeg'),
+            require('assets/img/project/mobile/jomedic/jomedic_4.jpeg'),
+            require('assets/img/project/mobile/jomedic/jomedic_5.jpeg'),
+            require('assets/img/project/mobile/jomedic/jomedic_6.jpeg'),
+            require('assets/img/project/mobile/jomedic/jomedic_7.jpeg'),
+            require('assets/img/project/mobile/jomedic/jomedic_8.jpeg'),
+            require('assets/img/project/mobile/jomedic/jomedic_9.jpeg'),
         ]
     },
 ];
@@ -81,7 +81,7 @@ export default function ProjectSection({ platform }) {
     const Project = ({ data }) => {
         return (
             <div>
-                <div style={webStyle.imgContainer} class={"imageContainer"}
+                <div class={"imageContainer"}
                     onClick={() => {
                         setTitle(data.title);
                         setDescription(data.description);

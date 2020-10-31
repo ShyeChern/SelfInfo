@@ -4,35 +4,33 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
-import Language from "@material-ui/icons/Language";
-import Smartphone from "@material-ui/icons/Smartphone";
-import GitHub from "@material-ui/icons/GitHub";
+import FormatListBulleted from '@material-ui/icons/FormatListBulleted';
+import Build from "@material-ui/icons/Build";
+import MenuBook from '@material-ui/icons/MenuBook';
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
-import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
-import Slide from "@material-ui/core/Slide";
+import CustomTabs from "components/CustomTabs/CustomTabs.js";
 // template style and own defined style (css is used, not detect by system)
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 import css from "assets/css/style.css";
 // Sections for this page
-import ProjectSection from "./Sections/ProjectSection.js";
+import ArticleSections from "./Sections/ArticleSections";
 
 const useStyles = makeStyles(styles);
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="down" ref={ref} {...props} />;
-});
-Transition.displayName = "Transition";
+// back to landing page button or go to next post?
 
-export default function ProfilePage(props) {
+// write blog post or something about problem how you solve etc title detail date time source
+
+export default function PostPage(props) {
   const classes = useStyles();
-
   const { ...rest } = props;
+
   return (
     <div>
       <Header
@@ -50,8 +48,8 @@ export default function ProfilePage(props) {
         <div className={classes.container} style={{ zIndex: 12, color: "#FFFFFF" }}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title} style={{ color: "#FFFFFF", marginTop: 0 }}>Project</h1>
-              <h4 style={{ fontStyle: "italic" }}>Some of my past project</h4>
+              <h1 className={classes.title} style={{ color: "#FFFFFF", marginTop: 0 }}>Article</h1>
+              <h4 style={{ fontStyle: "italic" }}>Record of problems that I met and what I learn</h4>
             </GridItem>
           </GridContainer>
         </div>
@@ -59,34 +57,41 @@ export default function ProfilePage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
           <div className={classes.container}>
+            <div className={classes.profile}>
+              <h3 className={classes.title}>Article</h3>
+            </div>
+
             <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={10} className={classes.navWrapper} >
-                <NavPills
-                  alignCenter
-                  color="primary"
+              <GridItem xs={12} sm={12} md={12} >
+                <CustomTabs
+                  headerColor="primary"
                   tabs={[
                     {
-                      tabButton: "Web",
-                      tabIcon: Language,
+                      tabName: "All",
+                      tabIcon: FormatListBulleted,
                       tabContent: (
-                        <ProjectSection platform="web" />
+                        <ArticleSections tab="all" />
                       )
                     },
                     {
-                      tabButton: "Mobile",
-                      tabIcon: Smartphone,
+                      tabName: "Theory",
+                      tabIcon: MenuBook,
                       tabContent: (
-                        <ProjectSection platform="mobile" />
+                        <ArticleSections tab="theory" />
                       )
                     },
-
+                    {
+                      tabName: "Technical",
+                      tabIcon: Build,
+                      tabContent: (
+                        <ArticleSections tab="technical" />
+                      )
+                    }
                   ]}
                 />
               </GridItem>
-              <GridItem xs={12} sm={12} md={6} style={{ textAlign: "center", margin: 0, marginBottom: 20 }}>
-                <GitHub /><a href="https://github.com/ShyeChern" target="_blank" rel="noopener noreferrer"> Click to view more project at my GitHub </a><GitHub />
-              </GridItem>
             </GridContainer>
+
           </div>
         </div>
       </div>
