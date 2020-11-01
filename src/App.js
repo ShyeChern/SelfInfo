@@ -8,7 +8,7 @@ import Components from "views/Components/Components.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import ArticlePage from "views/ArticlePage/ArticlePage.js";
-import PageNotFoundPage from "views/PageNotFound.js";
+import PageNotFoundPage from "views/Reuse/PageNotFound.js";
 // article page
 import ReactHooksArticle from "views/ArticlePage/Article/ReactHooksArticle.js";
 import ScrollToTop from "util/scrollToTop";
