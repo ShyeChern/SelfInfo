@@ -6,20 +6,20 @@ import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 
 const TheoryData = [
-    {
-        title: "React Hooks",
-        cover: require('assets/img/article/theory/react-hooks.jpg'),
-        date: "31 Oct 2020",
-        link: "react-hooks"
-    },
 ];
 
 const TechnicalData = [
     {
         title: "React Hooks",
         cover: require('assets/img/article/technical/react-hooks.jpg'),
-        date: "31 Oct 2020",
+        date: "1 Nov 2020",
         link: "react-hooks"
+    },
+    {
+        title: "Javascript DateTime Format",
+        cover: require('assets/img/article/technical/react-hooks.jpg'),
+        date: "8 Nov 2020",
+        link: "javascript-date-time-format"
     },
 ];
 
@@ -27,12 +27,12 @@ const Article = ({ data }) => {
     return (
         <div>
             <Link to={"/article/" + data.link} style={{ textDecoration: "none", color: 'inherit', textAlign: 'center' }}>
-                <div class={"imageContainer"}
+                <div className={"imageContainer"}
                     onClick={() => {
                     }} >
-                    <img src={data.cover} class="img-fluid" alt={data.title + "_cover_image"} style={{ height: 200 }} />
-                    <div class={"imageDescriptionLayer"}>
-                        <div class={"imageDescription"}>
+                    <img src={data.cover} className="img-fluid" alt={data.title + "_cover_image"} style={{ height: 200 }} />
+                    <div className={"imageDescriptionLayer"}>
+                        <div className={"imageDescription"}>
                             <b>Written on</b><br />
                             <i style={{ fontSize: 20 }}>{data.date}</i>
                         </div>
@@ -62,8 +62,8 @@ export default function ArticleSection({ tab }) {
                 {
                     tabData.map((value, index) => {
                         return (
-                            <GridItem xs={12} sm={12} md={4} style={{ paddingBottom: 30 }}>
-                                <Article data={value} key={index} />
+                            <GridItem xs={12} sm={12} md={4} style={{ paddingBottom: 30 }} key={index}>
+                                <Article data={value} />
                             </GridItem>
                         )
                     })

@@ -33,7 +33,7 @@ export default function PostSection() {
                 <Link to="/article/react-hooks">
                   <img src={team3} alt="Landing Page" className={imageClasses} />
                   <h5 className={classes.cardTitle}>
-                    React Hooks Use Effect
+                    React Hooks
                   <br />
                     <small className={classes.smallTitle} style={{ fontStyle: "italic" }}>Click to view</small>
                   </h5>
@@ -59,10 +59,10 @@ export default function PostSection() {
           <GridItem xs={12} sm={12} md={6}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <Link to="/article/useeffect">
+                <Link to="/article/javascript-date-time-format">
                   <img src={team3} alt="Project Page" className={imageClasses} />
                   <h5 className={classes.cardTitle}>
-                    Javascript datetime format
+                    Javascript DateTime Format
                   <br />
                     <small className={classes.smallTitle} style={{ fontStyle: "italic" }}>Click to view</small>
                   </h5>

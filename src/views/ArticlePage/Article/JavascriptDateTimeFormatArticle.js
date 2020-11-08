@@ -31,7 +31,6 @@ import articleOrder from "util/articleOrder";
 
 const useStyles = makeStyles(styles);
 
-// not work in article module css
 const style = {
   highlight: {
     borderRadius: 5,
@@ -102,7 +101,7 @@ export default function UseEffectPost(props) {
                           </Link>
                         </GridItem>
                         <GridItem xs={10} sm={10} md={11} >
-                          <h2>React Hooks</h2>
+                          <h2>Javascript DateTime Format</h2>
                         </GridItem>
                         <GridItem xs={2} sm={2} md={1} style={style.rightArrow}>
                           <Link to={nextArticle} className={classNames(article.link, { [article.disableLink]: nextArticle === "" })} title='Next Article'>
@@ -116,178 +115,171 @@ export default function UseEffectPost(props) {
                 <CardBody>
                   <GridContainer style={{ textAlign: 'center' }} justify="center">
                     <GridItem xs={12} sm={12} md={12}>
-                      <p className={article.date}>Last update on 1 Nov 2020</p>
+                      <p className={article.date}>Last update on 8 Nov 2020</p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
-                      <h2>What is React Hooks?</h2>
+                      <h3>Why bothering to use Javascript datetime library when you can do it without it?</h3>
                       <p className={article.text}>
-                        Hooks is a new feature introduce by React in 2018.
-                        With Hooks, we can easily reuse the state logic easily. It breaks down the classes into
-                        smaller function and increase the code reusability. The code below shows the original class pattern
-                        and the function pattern (Hooks cannot use in the class pattern).
+                        Sometimes when people want to manipulate some simple javascript datetime format,
+                        they simply use the javascript libraries. They dont know they can do it just with the
+                        native javascript.
                         </p>
+                    </GridItem>
+
+                    <GridItem xs={12} sm={12} md={10}>
+                      <hr />
+                      <h3>Type of DateTime Format </h3>
+                      <p className={article.text} style={style.highlight}>
+                        In general, there are 4 types of pattern of datetime format which are default format,
+                        UTC format, locale format and ISO format.
+                      </p>
                       <center>
                         <GridItem xs={12} sm={12} md={8}>
-                          <Gist id="b7b49f4939da8f9d76443a1be49853d4" file="ClassPattern.js" />
-                          <Gist id="b7b49f4939da8f9d76443a1be49853d4" file="FunctionPattern.js" />
+                          <Gist id="4981cff6cb21818814e5b7c435d0b005" file="GeneralPattern.js" />
                         </GridItem>
                       </center>
                       <p className={article.text}>
-                        Since the coding pattern is changed from class pattern to function pattern, the React Component
-                        Lifecycle method can no longer be used. But there are several type of hooks is used to replace it.
+                        <b>1. Default format: </b>
+                        Return the default javascript datetime format.<br />
+                        <b>2. Locale format: </b>
+                        Return the datetime which according to your timezone +00:00<br />
+                        <b>3. UTC format: </b>
+                        Return the datetime which scale to Coordinated Universal Time (UTC) +00:00.<br />
+                        <b>4. ISO format: </b>
+                        Return the datetime format which follow the ISO 8601 standard (TZD=Time Zone Designator )
                       </p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
                       <hr />
-                      <h3>1. useState</h3>
+                      <h3>Date and Time Format</h3>
                       <p className={article.text} style={style.highlight}>
-                        This hooks is use to get a value from variable or set a value to variable.
-                        It replace the setState() in Class Component.
-                      </p>
-                      <p className={article.highlightText} style={style.highlight}>
-                        <b>Syntax: </b> <br />
-                        const [<i>value, setValue</i>] = useState(<i>initialValue</i>);
-                      </p>
-                      <p className={article.highlightText} style={style.highlight}>
-                        <b>Explanation: </b> <br />
-                        <i>value</i> is a variable while <i>setValue</i> is a function.
-                        Simply call <i>value</i> variable to get the value of it while <i>setValue(newValue)</i>&nbsp;
-                        to set a new value into the variable. useState(<i>initialValue</i>) is the initial value at the first render.
-                        useState can store any type of variable such as number, string, boolean, array, object...
-                      </p>
-                    </GridItem>
-
-                    <GridItem xs={12} sm={12} md={10}>
-                      <hr />
-                      <h3>2. useEffect</h3>
-                      <p className={article.text} style={style.highlight}>
-                        This hooks will run on everytime screen is render.
-                        It replace componentDidMount, componentDidUpate and componentWillUnmount in Class Component
-                      </p>
-                      <p className={article.highlightText} style={style.highlight}>
-                        <b>Syntax: </b><br /> useEffect( <i>function</i> [,<i>variable</i>] )
-                      </p>
-                      <p className={article.highlightText} style={style.highlight}>
-                        <b>Explanation: </b> <br />
-                        <i>function</i> will run everytime screen is render.
-                        componentWillUnmount function can be called by using return function.
-                        However, when <i>variable</i> is set,
-                        this useEffect will only run when the <i>variable</i> value is changed.
-                        A clearer explanation with code is attached to make easier understanding.
+                        Two types of separated date and time format, default one and the locale one
                       </p>
                       <center>
                         <GridItem xs={12} sm={12} md={10}>
-                          <Gist id="b7b49f4939da8f9d76443a1be49853d4" file="UseEffect.js" />
+                          <Gist id="4981cff6cb21818814e5b7c435d0b005" file="DateAndTime.js" />
                         </GridItem>
                       </center>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
                       <hr />
-                      <h3>3. createContext, useContext</h3>
+                      <h3>Modifying Locale DateTime Format</h3>
                       <p className={article.text} style={style.highlight}>
-                        useContext allow us to pass variable without using props as long as the
-                        child component is still inside the parent component.
-                        It make ease of passing data from level to level in the component.
+                        There is a second parameter accept by the locale format which allow you to modifying
+                        the datetime format. (Also for date format and time format)
                       </p>
                       <p className={article.highlightText} style={style.highlight}>
                         <b>Syntax: </b><br />
-                        const <i>myContext</i> = createContext(<i>defaultValue</i>);<br />
-                        const <i>value</i> = useContext(<i>MyContext</i>);
-                      </p>
-                      <p className={article.highlightText} style={style.highlight}>
-                        <b>Explanation: </b> <br />
-                        We must create the context before using it. The defaultValue will only used when component
-                        did not find the matching provider (parent) in the tree. When we want to pass data from parent to
-                        child, myContext.Provider tag is used as parent and the value prop is used to pass the data.
-                        While useContext(myContext) is used to get the data of parent from any of the child component.
-                        An example code is attached to make easier understanding.
+                        dateObj.toLocaleDateString(<i>[locales[, options]]</i>)
                       </p>
                       <center>
                         <GridItem xs={12} sm={12} md={10}>
-                          <Gist id="b7b49f4939da8f9d76443a1be49853d4" file="CreateContextUseContext.js" />
+                          <Gist id="4981cff6cb21818814e5b7c435d0b005" file="LocaleOptions.js" />
                         </GridItem>
                       </center>
-                    </GridItem>
-
-                    <GridItem xs={12} sm={12} md={10}>
-                      <hr />
-                      <h3>4. useReducer</h3>
+                      <p>More info about locale parameter =&#62;
+                        <a target='_blank' rel="noopener noreferrer"
+                          href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat'>here</a>
+                      </p>
                       <p className={article.text} style={style.highlight}>
-                        An advanced version of useState. It is used when we need to execute a complex logic or state
-                        action.
+                        <b>Note: </b> <br />
+                        If you dont specify the some of the property in options, it wont display
                       </p>
-                      <p className={article.highlightText} style={style.highlight}>
-                        <b>Syntax: </b><br />
-                        const [<i>state, dispatch</i>] = useReducer(<i>reducerFunction, initialState, initialAction</i>);
-                      </p>
-                      <p className={article.highlightText} style={style.highlight}>
-                        <b>Explanation: </b> <br />
-                        Work almost same like useState. When <i>dispatch</i> is called, <i>reducerFunction</i> will
-                        received 2 parameter and execute logic to save as new state (previousState, action) =&#62; nextState.
-                        All the value passed in dispatch will received inside the action parameter. After the logic execute,
-                        the result will save as the current state.
-                      </p>
-                      <center>
-                        <GridItem xs={12} sm={12} md={10}>
-                          <Gist id="b7b49f4939da8f9d76443a1be49853d4" file="UseReducer.js" />
-                        </GridItem>
-                      </center>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
                       <hr />
-                      <h3>5. useMemo, useCallback</h3>
+                      <h3>Constructor of Date</h3>
                       <p className={article.text} style={style.highlight}>
-                        Hooks that help to store a callback or result of a callback. The value will not change unless the
-                        value in array of dependencies is changed. It is a technique to speed up program.
-                      </p>
-                      <p className={article.highlightText} style={style.highlight}>
-                        <b>Syntax: </b><br />
-                        const <i>memoizedValue</i> = useMemo(() =&#62; <i>computeExpensiveValue(a, b), [a, b]</i>);<br />
-                        const <i>memoizedCallback </i> = useCallback(() =&#62; <i>computeExpensiveValue(a, b), [a, b]</i>);
-                      </p>
-                      <p className={article.highlightText} style={style.highlight}>
-                        <b>Explanation: </b> <br />
-                        useMemo store value while useCallback store callback. Look at the example.
+                        Before we manipulating and formating the datetime, we need to change the string to the date
+                        object. We can use the date constructor to make our date string into date object.
                       </p>
                       <center>
                         <GridItem xs={12} sm={12} md={10}>
-                          <Gist id="b7b49f4939da8f9d76443a1be49853d4" file="UseMemoUseCallback.js" />
+                          <Gist id="4981cff6cb21818814e5b7c435d0b005" file="DateConstructor.js" />
                         </GridItem>
                       </center>
+                      <p>More info about date constructor =&#62;
+                        <a target='_blank' rel="noopener noreferrer"
+                          href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date'>here</a>
+                      </p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
                       <hr />
-                      <h3>6. useRef</h3>
+                      <h3>Get specific value from the date object</h3>
                       <p className={article.text} style={style.highlight}>
-                        Hooks that helps returns a ref object with current property is initialized.
-                        Can use to make certain action such as focus. useRef will not re-render.
-                      </p>
-                      <p className={article.highlightText} style={style.highlight}>
-                        <b>Syntax: </b><br />
-                        const <i>refContainer</i> = useRef(<i>initialValue</i>);
-                      </p>
-                      <p className={article.highlightText} style={style.highlight}>
-                        <b>Explanation: </b> <br />
-                        Just look at the example below
+                        In order to get the specific value of the date such as such as the year, month, date and time.
+                        Just use the get method will do.
                       </p>
                       <center>
                         <GridItem xs={12} sm={12} md={10}>
-                          <Gist id="b7b49f4939da8f9d76443a1be49853d4" file="UseRef.js" />
+                          <Gist id="4981cff6cb21818814e5b7c435d0b005" file="GetValue.js" />
+                        </GridItem>
+                        <p>More get method =&#62;
+                        <a target='_blank' rel="noopener noreferrer"
+                            href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date'>here</a>
+                        </p>
+                      </center>
+                    </GridItem>
+
+                    <GridItem xs={12} sm={12} md={10}>
+                      <hr />
+                      <h3>Tricks in manipulating datetime format</h3>
+                      <p className={article.text} style={style.highlight}>
+                        If you are not using any javascript datetime library. The tricks below could
+                        help you a lot.
+                      </p>
+                      <p className={article.highlightText} style={style.highlight}>
+                        <b>1. Get Name of Month and Day</b><br />
+                        Since <i>getMonth()</i> and <i>getDay()</i> method return only number value, there are
+                        two different ways to get the name of the month or day. First is using the appropriate way
+                        (can choose short or long name) while second is quick hack to get short name of day or month.
+                      </p>
+                      <center>
+                        <GridItem xs={12} sm={12} md={10}>
+                          <Gist id="4981cff6cb21818814e5b7c435d0b005" file="GetDayMonthName.js" />
+                        </GridItem>
+                      </center>
+                      <p className={article.highlightText} style={style.highlight}>
+                        <b>2. Add or substract day</b><br />
+                        In order to add or substract number of day to the date. First convert your date object into
+                        milliseconds by using <i>Date.parse() </i> or <i>getTime() </i>. Both of these function will
+                        returns the number of milliseconds since January 1, 1970, 00:00:00 UTC. After that add the value
+                        according to your desired value where 1 second = 1000 milliseconds. Last, convert the milliseconds
+                        back to the date object using the date constructor.
+                      </p>
+                      <center>
+                        <GridItem xs={12} sm={12} md={10}>
+                          <Gist id="4981cff6cb21818814e5b7c435d0b005" file="AddDay.js" />
+                        </GridItem>
+                      </center>
+                      <p className={article.highlightText} style={style.highlight}>
+                        <b>3. Comparing dates</b><br />
+                        Same with add or substract day. Convert the date into milliseconds by using <i>Date.parse() </i>
+                        or <i>getTime() </i>. After that, compare it by using the compare operator.
+                      </p>
+                      <center>
+                        <GridItem xs={12} sm={12} md={10}>
+                          <Gist id="4981cff6cb21818814e5b7c435d0b005" file="ComparingDate.js" />
                         </GridItem>
                       </center>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
                       <hr />
-                      <h3>Note</h3>
-                      <p style={{ textAlign: "justify" }}>
-                        You need to import the hooks in order to use it e.g. &nbsp;
-                        <b>import React, &#123;useState, useEffect&#125; from "react";</b>
+                      <h3>Javascript datetime library</h3>
+                      <p className={article.text} style={style.highlight}>
+                        When you need a complex manipulation on the datetime format, a javascript datetime library will
+                        make ease of you because the current Javascript datetime capabilities is not that great.
+                        There are a lot of javascript datetime library available now and the most popular one is moment.js.
+                        However, moment is now generally consider to be a legacy project in maintenance mode (
+                        <a href="https://momentjs.com/docs/" target="_blank" rel="noopener noreferrer">why stop using moment?</a>).
+                        There are a lot more javascript library avaialble such as date-fns which is perform better than moment.
+                        Just feel free to use it when necessary.
                       </p>
                     </GridItem>
                   </GridContainer>
@@ -299,13 +291,11 @@ export default function UseEffectPost(props) {
                     <GridItem xs={12} sm={12} md={12}>
                       <h6>Reference:</h6>
                       <ol>
-                        <li>https://reactjs.org/docs/hooks-reference.html</li>
-                        <li>https://webbrainsmedia.com/blogs/react-hooks-explained-useEffect-hook</li>
-                        <li>and some Stack Overflow...</li>
+                        <li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date</li>
                       </ol>
                     </GridItem>
                     <GridItem xs={12} sm={12} md={12} style={{ textAlign: 'center', marginTop: 20 }}>
-                      <Link to="/article" className={article.link}>
+                      <Link to="/article" style={{ textDecoration: "none", color: 'inherit' }}>
                         <Button color="danger" size="lg">
                           Back to article Page
                        </Button>
