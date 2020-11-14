@@ -6,6 +6,12 @@ import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 
 const TheoryData = [
+    {
+        title: "Http Request Method",
+        cover: require('assets/img/article/theory/react-hooks.jpg'),
+        date: "14 Nov 2020",
+        link: "http-request-method"
+    },
 ];
 
 const TechnicalData = [
@@ -20,6 +26,12 @@ const TechnicalData = [
         cover: require('assets/img/article/technical/react-hooks.jpg'),
         date: "8 Nov 2020",
         link: "javascript-date-time-format"
+    },
+    {
+        title: "Git",
+        cover: require('assets/img/article/theory/react-hooks.jpg'),
+        date: "14 Nov 2020",
+        link: "git"
     },
 ];
 

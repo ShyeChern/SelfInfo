@@ -51,7 +51,7 @@ const style = {
   }
 }
 
-export default function UseEffectPost(props) {
+export default function ReactHooksArticle(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   setTimeout(function () {
     setCardAnimation("");

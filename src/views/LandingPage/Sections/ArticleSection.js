@@ -40,15 +40,15 @@ export default function PostSection() {
                 </Link>
               </GridItem>
             </Card>
-            
+
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <Link to="/article/useeffect">
+                <Link to="/article/git">
                   <img src={team3} alt="Profile Page" className={imageClasses} />
                   <h5 className={classes.cardTitle}>
-                    Http TLS Https
+                    Git
                   <br />
                     <small className={classes.smallTitle} style={{ fontStyle: "italic" }}>Click to view</small>
                   </h5>
@@ -73,10 +73,10 @@ export default function PostSection() {
           <GridItem xs={12} sm={12} md={6}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <Link to="/article/useeffect">
+                <Link to="/article/http-request-method">
                   <img src={team3} alt="Contact Page" className={imageClasses} />
                   <h5 className={classes.cardTitle}>
-                    Cron Job
+                    Http Request Method
                   <br />
                     <small className={classes.smallTitle} style={{ fontStyle: "italic" }}>Click to view</small>
                   </h5>

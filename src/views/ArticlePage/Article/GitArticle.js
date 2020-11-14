@@ -50,7 +50,7 @@ const style = {
   }
 }
 
-export default function JavascriptDateTimeFormatArticle(props) {
+export default function GitArticle(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   setTimeout(function () {
     setCardAnimation("");
@@ -101,7 +101,7 @@ export default function JavascriptDateTimeFormatArticle(props) {
                           </Link>
                         </GridItem>
                         <GridItem xs={10} sm={10} md={11} >
-                          <h2>Javascript DateTime Format</h2>
+                          <h2>Git</h2>
                         </GridItem>
                         <GridItem xs={2} sm={2} md={1} style={style.rightArrow}>
                           <Link to={nextArticle} className={classNames(article.link, { [article.disableLink]: nextArticle === "" })} title='Next Article'>
@@ -115,11 +115,11 @@ export default function JavascriptDateTimeFormatArticle(props) {
                 <CardBody>
                   <GridContainer style={{ textAlign: 'center' }} justify="center">
                     <GridItem xs={12} sm={12} md={12}>
-                      <p className={article.date}>Last update on 8 Nov 2020</p>
+                      <p className={article.date}>Last update on 14 Nov 2020</p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
-                      <h3>Why bothering to use Javascript datetime library when you can do it without it?</h3>
+                      <h3>What is git? Where do it use?</h3>
                       <p className={article.text}>
                         Sometimes when people want to manipulate some simple javascript datetime format,
                         they simply use the javascript libraries. They dont know they can do it just with the

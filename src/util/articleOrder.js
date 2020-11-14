@@ -1,6 +1,8 @@
 const articleOrderData = [
     '/article/react-hooks',
     '/article/javascript-date-time-format',
+    '/article/http-request-method',
+    '/article/git',
 ];
 
 export default function articleOrder(currentPath) {
