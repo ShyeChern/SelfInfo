@@ -168,7 +168,8 @@ export default function GitArticle(props) {
                       </p>
                       <p className={article.text}>
                         <b>Explanation: </b>
-                        Commit the staged changes with "[message]" as the commit message.
+                        Push the commit into live and merge with the remote branch. For example,
+                        git push origin master will push all your changes in local repository and merge with remote master branch.
                       </p>
                       <p className={article.highlightText} style={style.highlight}>
                         <b>git pull [remote] [branch]</b>
@@ -176,7 +177,7 @@ export default function GitArticle(props) {
                       <p className={article.text}>
                         <b>Explanation: </b>
                         Fetch the specified remote update and immediately merge it into the local copy. For example,
-                        git pull origin master will update your local repository with the latest one in the master branch.
+                        git pull origin master will update your local repository with the latest one in the remote master branch.
                       </p>
                     </GridItem>
 
