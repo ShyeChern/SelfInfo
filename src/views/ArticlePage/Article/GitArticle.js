@@ -119,41 +119,70 @@ export default function GitArticle(props) {
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
-                      <h3>What is git? Where do it use?</h3>
+                      <h3>What is git?</h3>
                       <p className={article.text}>
-                        Sometimes when people want to manipulate some simple javascript datetime format,
-                        they simply use the javascript libraries. They dont know they can do it just with the
-                        native javascript.
+                        Git is a distributed version-control system for tracking changes in source code during software development.
+                        It is designed for coordinating work among programmers, but it can be used to track changes in any
+                        set of files. Its goals include speed, data integrity, and support for distributed, non-linear workflows.
                         </p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
                       <hr />
-                      <h3>Type of DateTime Format </h3>
-                      <p className={article.text} style={style.highlight}>
-                        In general, there are 4 types of pattern of datetime format which are default format,
-                        UTC format, locale format and ISO format.
+                      <h3>Git Basic Command</h3>
+                      <p className={article.highlightText} style={style.highlight}>
+                        <b>git config --global user.name [name]</b> <br />
+                        <b>git config --global user.email [email]</b>
                       </p>
-                      <center>
-                        <GridItem xs={12} sm={12} md={8}>
-                          <Gist id="4981cff6cb21818814e5b7c435d0b005" file="GeneralPattern.js" />
-                        </GridItem>
-                      </center>
                       <p className={article.text}>
-                        <b>1. Default format: </b>
-                        Return the default javascript datetime format.<br />
-                        <b>2. Locale format: </b>
-                        Return the datetime which according to your timezone +00:00<br />
-                        <b>3. UTC format: </b>
-                        Return the datetime which scale to Coordinated Universal Time (UTC) +00:00.<br />
-                        <b>4. ISO format: </b>
-                        Return the datetime format which follow the ISO 8601 standard (TZD=Time Zone Designator )
+                        <b>Explanation: </b>
+                        Define the username and email of the user for all the git command. Only require for the
+                        first time.
+                      </p>
+                      <p className={article.highlightText} style={style.highlight}>
+                        <b>git remote add [name] [url]</b>
+                      </p>
+                      <p className={article.text}>
+                        <b>Explanation: </b>
+                        Add a new connection to a remote repository. After adding a remote, you can use [name] as
+                        a shortcut for [url] in other commands. For example: git remote add origin <b>url</b> and follow by
+                        git pull <b>origin</b> master
+                      </p>
+                      <p className={article.highlightText} style={style.highlight}>
+                        <b>git add [directory]</b>
+                      </p>
+                      <p className={article.text}>
+                        <b>Explanation: </b>
+                        Stage all changes in [directory] for the next commit. Replace [directory] with a [filename] to
+                        change a specific file. If period is used (git add <b>.</b>) It will stage all changes in the directory
+                      </p>
+                      <p className={article.highlightText} style={style.highlight}>
+                        <b>git commit -m "[message]"</b>
+                      </p>
+                      <p className={article.text}>
+                        <b>Explanation: </b>
+                        Commit the staged changes with "[message]" as the commit message.
+                      </p>
+                      <p className={article.highlightText} style={style.highlight}>
+                        <b>git push [remote] [branch]</b>
+                      </p>
+                      <p className={article.text}>
+                        <b>Explanation: </b>
+                        Commit the staged changes with "[message]" as the commit message.
+                      </p>
+                      <p className={article.highlightText} style={style.highlight}>
+                        <b>git pull [remote] [branch]</b>
+                      </p>
+                      <p className={article.text}>
+                        <b>Explanation: </b>
+                        Fetch the specified remote update and immediately merge it into the local copy. For example,
+                        git pull origin master will update your local repository with the latest one in the master branch.
                       </p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
                       <hr />
-                      <h3>Date and Time Format</h3>
+                      <h3>Git Advanced Command</h3>
                       <p className={article.text} style={style.highlight}>
                         Two types of separated date and time format, default one and the locale one
                       </p>
@@ -291,7 +320,7 @@ export default function GitArticle(props) {
                     <GridItem xs={12} sm={12} md={12}>
                       <h6>Reference:</h6>
                       <ol>
-                        <li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date</li>
+                        <li>https://en.wikipedia.org/wiki/Git</li>
                       </ol>
                     </GridItem>
                     <GridItem xs={12} sm={12} md={12} style={{ textAlign: 'center', marginTop: 20 }}>
