@@ -14,6 +14,7 @@ import ReactHooksArticle from "views/ArticlePage/Article/ReactHooksArticle.js";
 import JavascriptDateTimeFormatArticle from "views/ArticlePage/Article/JavascriptDateTimeFormatArticle.js";
 import GitArticle from "views/ArticlePage/Article/GitArticle.js";
 import HttpRequestMethodArticle from "views/ArticlePage/Article/HttpRequestMethodArticle.js";
+import VanillaJavascriptArticle from "views/ArticlePage/Article/VanillaJavascriptArticle.js";
 import ScrollToTop from "util/scrollToTop";
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
                     <Route exact path="/article/javascript-date-time-format" component={JavascriptDateTimeFormatArticle} />
                     <Route exact path="/article/http-request-method" component={HttpRequestMethodArticle} />
                     <Route exact path="/article/git" component={GitArticle} />
+                    <Route exact path="/article/vanilla-javascript" component={VanillaJavascriptArticle} />
 
 
                     <Route exact path="/component" component={Components} />

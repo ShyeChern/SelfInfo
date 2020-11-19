@@ -29,9 +29,15 @@ const TechnicalData = [
     },
     {
         title: "Git",
-        cover: require('assets/img/article/theory/react-hooks.jpg'),
-        date: "14 Nov 2020",
+        cover: require('assets/img/article/technical/react-hooks.jpg'),
+        date: "17 Nov 2020",
         link: "git"
+    },
+    {
+        title: "Vanilla Javascript",
+        cover: require('assets/img/article/technical/react-hooks.jpg'),
+        date: "19 Nov 2020",
+        link: "vanilla-javascript"
     },
 ];
 

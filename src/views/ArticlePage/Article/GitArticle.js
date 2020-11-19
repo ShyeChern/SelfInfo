@@ -115,7 +115,7 @@ export default function GitArticle(props) {
                 <CardBody>
                   <GridContainer style={{ textAlign: 'center' }} justify="center">
                     <GridItem xs={12} sm={12} md={12}>
-                      <p className={article.date}>Last update on 15 Nov 2020</p>
+                      <p className={article.date}>Last update on 17 Nov 2020</p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>

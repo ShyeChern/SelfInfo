@@ -3,6 +3,7 @@ const articleOrderData = [
     '/article/javascript-date-time-format',
     '/article/http-request-method',
     '/article/git',
+    '/article/vanilla-javascript',
 ];
 
 export default function articleOrder(currentPath) {
