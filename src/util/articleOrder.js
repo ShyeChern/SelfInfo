@@ -4,6 +4,7 @@ const articleOrderData = [
     '/article/http-request-method',
     '/article/git',
     '/article/vanilla-javascript',
+    '/article/sql-vs-nosql',
 ];
 
 export default function articleOrder(currentPath) {

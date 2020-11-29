@@ -8,9 +8,15 @@ import GridItem from "components/Grid/GridItem.js";
 const TheoryData = [
     {
         title: "Http Request Method",
-        cover: require('assets/img/article/theory/react-hooks.jpg'),
+        cover: require('assets/img/article/theory/http-request-method.png'),
         date: "14 Nov 2020",
         link: "http-request-method"
+    },
+    {
+        title: "SQL vs NoSQL",
+        cover: require('assets/img/article/theory/sql-vs-nosql.jpg'),
+        date: "28 Nov 2020",
+        link: "sql-vs-nosql"
     },
 ];
 
@@ -23,20 +29,20 @@ const TechnicalData = [
     },
     {
         title: "Javascript DateTime Format",
-        cover: require('assets/img/article/technical/react-hooks.jpg'),
+        cover: require('assets/img/article/technical/javascript-datetime-format.png'),
         date: "8 Nov 2020",
         link: "javascript-date-time-format"
     },
     {
         title: "Git",
-        cover: require('assets/img/article/technical/react-hooks.jpg'),
+        cover: require('assets/img/article/technical/git.jpg'),
         date: "17 Nov 2020",
         link: "git"
     },
     {
         title: "Vanilla Javascript",
-        cover: require('assets/img/article/technical/react-hooks.jpg'),
-        date: "19 Nov 2020",
+        cover: require('assets/img/article/technical/vanilla-javascript.png'),
+        date: "27 Nov 2020",
         link: "vanilla-javascript"
     },
 ];

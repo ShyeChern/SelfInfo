@@ -11,7 +11,10 @@ import GridItem from "components/Grid/GridItem.js";
 import Card from "components/Card/Card.js";
 // template style
 import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
-import team3 from "assets/img/landing.jpg";
+import SqlVsNosql from "assets/img/article/theory/sql-vs-nosql.jpg";
+import ReactHooks from "assets/img/article/technical/react-hooks.jpg";
+import Git from "assets/img/article/technical/git.jpg";
+import VanillaJavascript from "assets/img/article/technical/vanilla-javascript.png";
 
 const useStyles = makeStyles(styles);
 
@@ -31,7 +34,7 @@ export default function PostSection() {
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                 <Link to="/article/react-hooks">
-                  <img src={team3} alt="Landing Page" className={imageClasses} />
+                  <img src={ReactHooks} alt="React Hooks" className={imageClasses} style={{ height: 120, width: 300 }} />
                   <h5 className={classes.cardTitle}>
                     React Hooks
                   <br />
@@ -46,7 +49,7 @@ export default function PostSection() {
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                 <Link to="/article/git">
-                  <img src={team3} alt="Profile Page" className={imageClasses} />
+                  <img src={Git} alt="Git" className={imageClasses} style={{ height: 120, width: 300 }} />
                   <h5 className={classes.cardTitle}>
                     Git
                   <br />
@@ -59,10 +62,10 @@ export default function PostSection() {
           <GridItem xs={12} sm={12} md={6}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <Link to="/article/javascript-date-time-format">
-                  <img src={team3} alt="Project Page" className={imageClasses} />
+                <Link to="/article/vanilla-javascript">
+                  <img src={VanillaJavascript} alt="Vanilla Javascript" className={imageClasses} style={{ height: 120, width: 300 }} />
                   <h5 className={classes.cardTitle}>
-                    Javascript DateTime Format
+                    Vanilla Javascript
                   <br />
                     <small className={classes.smallTitle} style={{ fontStyle: "italic" }}>Click to view</small>
                   </h5>
@@ -73,10 +76,10 @@ export default function PostSection() {
           <GridItem xs={12} sm={12} md={6}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <Link to="/article/http-request-method">
-                  <img src={team3} alt="Contact Page" className={imageClasses} />
+                <Link to="/article/sql-vs-nosql">
+                  <img src={SqlVsNosql} alt="SQL vs NoSQL" className={imageClasses} style={{ height: 120, width: 300 }} />
                   <h5 className={classes.cardTitle}>
-                    Http Request Method
+                    SQL vs NoSQL
                   <br />
                     <small className={classes.smallTitle} style={{ fontStyle: "italic" }}>Click to view</small>
                   </h5>

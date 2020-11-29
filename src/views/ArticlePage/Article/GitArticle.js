@@ -24,8 +24,6 @@ import CardFooter from "components/Card/CardFooter.js";
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
 import article from "assets/css/article.module.css";
 import image from "assets/img/articleBackground.jpg";
-// component to show github gist 
-import Gist from "views/Reuse/Gist";
 // function to get and check article order
 import articleOrder from "util/articleOrder";
 
@@ -115,7 +113,7 @@ export default function GitArticle(props) {
                 <CardBody>
                   <GridContainer style={{ textAlign: 'center' }} justify="center">
                     <GridItem xs={12} sm={12} md={12}>
-                      <p className={article.date}>Last update on 17 Nov 2020</p>
+                      <p className={article.date}>Last update on 29 Nov 2020</p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
@@ -145,7 +143,7 @@ export default function GitArticle(props) {
                       <p className={article.text}>
                         <b>Explanation: </b>
                         Add a new connection to a remote repository. After adding a remote, you can use [name] as
-                        a shortcut for [url] in other commands. For example: <b><i>git remote add origin [url]</i></b> and follow by 
+                        a shortcut for [url] in other commands. For example: <b><i>git remote add origin [url]</i></b> and follow by
                         <b><i> git pull origin master</i></b>
                       </p>
                       <p className={article.highlightText} style={style.highlight}>
@@ -153,9 +151,9 @@ export default function GitArticle(props) {
                       </p>
                       <p className={article.text}>
                         <b>Explanation: </b>
-                        Stage all changes in [directory] for the next commit. Replace <b><i>[directory]</i></b> with 
-                        a <b><i>[filename]</i></b> to change a specific file. If period is used (<b><i>git add .</i></b>) It will stage 
-                        all changes in the current 
+                        Stage all changes in [directory] for the next commit. Replace <b><i>[directory]</i></b> with
+                        a <b><i>[filename]</i></b> to change a specific file. If period is used (<b><i>git add .</i></b>) It will stage
+                        all changes in the current
                         directory
                       </p>
                       <p className={article.highlightText} style={style.highlight}>
@@ -171,7 +169,7 @@ export default function GitArticle(props) {
                       <p className={article.text}>
                         <b>Explanation: </b>
                         Push the commit into live and merge with the remote branch. For example,
-                        <b><i>git push origin master</i></b> will push all your changes in local repository and merge with remote 
+                        <b><i>git push origin master</i></b> will push all your changes in local repository and merge with remote
                         master branch.
                       </p>
                       <p className={article.highlightText} style={style.highlight}>
@@ -180,7 +178,7 @@ export default function GitArticle(props) {
                       <p className={article.text}>
                         <b>Explanation: </b>
                         Fetch the specified remote update and immediately merge it into the local copy. For example,
-                        <b><i> git pull origin master</i></b> will update your local repository with the latest one in the remote 
+                        <b><i> git pull origin master</i></b> will update your local repository with the latest one in the remote
                         master branch.
                       </p>
                     </GridItem>
@@ -193,7 +191,7 @@ export default function GitArticle(props) {
                       </p>
                       <p className={article.text}>
                         <b>Explanation: </b>
-                        List down all the branch in local repository. User with <b><i>git branch -r</i></b> to view list of branch 
+                        List down all the branch in local repository. User with <b><i>git branch -r</i></b> to view list of branch
                         in remote. There are more branch argument availale....
                       </p>
                       <p className={article.highlightText} style={style.highlight}>
@@ -201,8 +199,8 @@ export default function GitArticle(props) {
                       </p>
                       <p className={article.text}>
                         <b>Explanation: </b>
-                        Switched to another branch. If use with <b><i>git checkout -b [branch]</i></b> will create the branch if it 
-                        is not exist. If branch is not in local yet (in remote) use git pull to pull down the branch then only 
+                        Switched to another branch. If use with <b><i>git checkout -b [branch]</i></b> will create the branch if it
+                        is not exist. If branch is not in local yet (in remote) use git pull to pull down the branch then only
                         checkout to switch to it.
                       </p>
                       <p className={article.highlightText} style={style.highlight}>
@@ -210,22 +208,21 @@ export default function GitArticle(props) {
                       </p>
                       <p className={article.text}>
                         <b>Explanation: </b>
-                        Merge branch into current branch. If you current pointing at the master branch, 
+                        Merge branch into current branch. If you current pointing at the master branch,
                         <b><i> git merge [branch]</i></b> will merge the <b><i>[branch]</i></b> into master branch.
                       </p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
                       <hr />
-                      <h3>Others...</h3>
+                      <h3>gitignore</h3>
                       <p className={article.text} style={style.highlight}>
-                        When you need a complex manipulation on the datetime format, a javascript datetime library will
-                        make ease of you because the current Javascript datetime capabilities is not that great.
-                        There are a lot of javascript datetime library available now and the most popular one is moment.js.
-                        However, moment is now generally consider to be a legacy project in maintenance mode (
-                        <a href="https://momentjs.com/docs/" target="_blank" rel="noopener noreferrer">why stop using moment?</a>).
-                        There are a lot more javascript library avaialble such as date-fns which is perform better than moment.
-                        Just feel free to use it when necessary.
+                        Gitignore (.gitignore) is a plain text file where each line in file contains a pattern for files/directories to
+                        ignore. The files/directories will then not staged and committed to the repository. Gitignore always used to
+                        ignore files like node_modules, .env, log and some other file which is sensitive or not related to the live
+                        project. Note that files already tracked by Git are not affected when you add it into gitignore, so you have 
+                        to use one of these commands to untrack your file (<b><i>git rm --cached [file]</i></b>,
+                        &nbsp;<b><i>git rm -r --cached [folder]</i></b>)
                       </p>
                     </GridItem>
                   </GridContainer>

@@ -20,6 +20,8 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardFooter from "components/Card/CardFooter.js";
+// bootstrap table
+import Table from 'react-bootstrap/Table';
 // css
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
 import article from "assets/css/article.module.css";
@@ -50,7 +52,7 @@ const style = {
   }
 }
 
-export default function VanillaJavascriptArticle(props) {
+export default function SqlVSNosqlArticle(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   setTimeout(function () {
     setCardAnimation("");
@@ -101,7 +103,7 @@ export default function VanillaJavascriptArticle(props) {
                           </Link>
                         </GridItem>
                         <GridItem xs={10} sm={10} md={11} >
-                          <h2>Vanilla Javascript</h2>
+                          <h2>SQL vs NoSQL</h2>
                         </GridItem>
                         <GridItem xs={2} sm={2} md={1} style={style.rightArrow}>
                           <Link to={nextArticle} className={classNames(article.link, { [article.disableLink]: nextArticle === "" })} title='Next Article'>
@@ -115,99 +117,96 @@ export default function VanillaJavascriptArticle(props) {
                 <CardBody>
                   <GridContainer style={{ textAlign: 'center' }} justify="center">
                     <GridItem xs={12} sm={12} md={12}>
-                      <p className={article.date}>Last update on 27 Nov 2020</p>
+                      <p className={article.date}>Last update on 28 Nov 2020</p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
-                      <h3>What is Vanilla Javascript</h3>
+                      <h3>What is SQL and NoSQL</h3>
                       <p className={article.text}>
-                        VanillaJS means using plain JavaScript without any additional libraries like jQuery.
-                        People use it as a joke to remind other developers that many things can be done nowadays
-                        without the need for additional JavaScript libraries. At the below, I will show some common 
-                        jQuery action which can be done via plain Javascript.
+                        SQL database also known as relational database, it have a table-based data structure,
+                        with a strict, predefined schema required MySQL. NoSQL database or known as non-relational database, can
+                        be document based, graph databases, key-value pairs, or wide-column stores. NoSQL databases do not
+                        require any predefined schema, allowing you to work more freely with "unstructured data".
+                        Some of the sample of SQL databases include MySQL, Oracle, PostgreSQL, and Microsoft SQL Server while
+                        NoSQL database examples include MongoDB, Cassandra, HBase and CouchDB.
                         </p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
                       <hr />
-                      <h3>Display</h3>
-                      <p className={article.text} style={style.highlight}>
-                        In jQeury, we use <i>show()</i>and <i>hide()</i>. Now in can be replaced by <i>document.querySelector.style</i>
-                        It is not limited to the display style but every style.
-                      </p>
-                      <center>
-                        <GridItem xs={12} sm={12} md={8}>
-                        <Gist id="acbea18f1892a7310b271c120d0b0e88" file="Display.html" />
-                        </GridItem>
-                      </center>
+                      <h3>Diffrences between SQL database and NoSQL database</h3>
+                      <Table className={article.text} style={style.highlight} striped bordered hover responsive >
+                        <thead style={{ textAlign: 'center' }}>
+                          <tr>
+                            <th></th>
+                            <th>SQL</th>
+                            <th>NoSQL</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><b>Data Storage Model</b></td>
+                            <td>Tabular based design, relational database. Tables with fixed pre-defined columns and datatype, all the rows need to follows the columns datatype standard</td>
+                            <td>Document based design, non-relational database. Collections with dynamic JSON type documents, does not have a fixed column or datatype required</td>
+                          </tr>
+                          <tr>
+                            <td><b>Flexibility</b></td>
+                            <td>Detailed database model is required before database creation. Not easy to scale with their rigid schema restrictions</td>
+                            <td>No detailed modeling is required. Can easily scaled with their dynamic schema nature</td>
+                          </tr>
+                          <tr>
+                            <td><b>Standardization</b></td>
+                            <td>SQL is standard language</td>
+                            <td>Lack of a standard query language</td>
+                          </tr>
+                          <tr>
+                            <td><b>Scalability</b></td>
+                            <td>Can only buy another bigger server to enhance your database. (Vertical scalability)</td>
+                            <td>Can add another server to enhance your database. (Horizontal scalability)</td>
+                          </tr>
+                          <tr>
+                            <td><b>Structure</b></td>
+                            <td>ACID (Atomicity, Consistency, Isolation, and Durability) </td>
+                            <td>Base (Basically Available, Soft State, Eventually Consistent)</td>
+                          </tr>
+                        </tbody>
+                      </Table>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
                       <hr />
-                      <h3>Get Value</h3>
+                      <h3>Sample CRUD</h3>
                       <p className={article.text} style={style.highlight}>
-                        Ways of getting and modifying value in jQeury and plain javascript
+                        The following example shows the sample CRUD (Create, Read, Update, Delete) using 
+                        MySQL Database (SQL) and MongoDB (NoSQL)
                       </p>
+                      <h4>1. Create/Insert</h4>
+                      <Table className={article.text} style={style.highlight} striped bordered hover responsive >
+                        <thead style={{ textAlign: 'center' }}>
+                          <tr>
+                            <th>SQL</th>
+                            <th>NoSQL</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Tabular based design, relational database. Tables with fixed pre-defined columns and datatype, all the rows need to follows the columns datatype standard</td>
+                            <td>Document based design, non-relational database. Collections with dynamic JSON type documents, does not have a fixed column or datatype required</td>
+                          </tr>
+                        </tbody>
+                      </Table>
                       <center>
                         <GridItem xs={12} sm={12} md={10}>
-                          <Gist id="acbea18f1892a7310b271c120d0b0e88" file="GetValue.html" />
+                          <Gist id="4981cff6cb21818814e5b7c435d0b005" file="LocaleOptions.js" />
                         </GridItem>
                       </center>
-                    </GridItem>
-
-                    <GridItem xs={12} sm={12} md={10}>
-                      <hr />
-                      <h3>Listener</h3>
-                      <p className={article.text} style={style.highlight}>
-                        Sample event listener of jQuery and plain javascript
-                      </p>
-                      <center>
-                        <GridItem xs={12} sm={12} md={10}>
-                          <Gist id="acbea18f1892a7310b271c120d0b0e88" file="Listener.html" />
-                        </GridItem>
-                      </center>
-                    </GridItem>
-
-                    <GridItem xs={12} sm={12} md={10}>
-                      <hr />
-                      <h3>Delegate</h3>
-                      <p className={article.text} style={style.highlight}>
-                        For dynamic element event handling
-                      </p>
-                      <center>
-                        <GridItem xs={12} sm={12} md={10}>
-                          <Gist id="acbea18f1892a7310b271c120d0b0e88" file="Delegate.html" />
-                        </GridItem>
-                      </center>
-                    </GridItem>
-
-                    <GridItem xs={12} sm={12} md={10}>
-                      <hr />
-                      <h3>Api Call</h3>
-                      <p className={article.text} style={style.highlight}>
-                        One of the most important thing in software development, api call.
-                      </p>
-                      <center>
-                        <GridItem xs={12} sm={12} md={10}>
-                          <Gist id="acbea18f1892a7310b271c120d0b0e88" file="ApiCall.js" />
-                        </GridItem>
-                      </center>
-                      <p>
+                      <p>More info about locale parameter =&#62;
                         <a target='_blank' rel="noopener noreferrer"
-                          href='https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch'>Click for more info about the fetch</a>
+                          href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat'>here</a>
                       </p>
-                    </GridItem>
-
-                    <GridItem xs={12} sm={12} md={10}>
-                      <hr />
-                      <h3>Others Info</h3>
                       <p className={article.text} style={style.highlight}>
-                        For your information, in Bootstrap 5, jQeury was removed and switched to Vanilla Javascript.
-                        Vanilla JS can really achieved what jQuery can do and Vanilla JS has a better performance compared with 
-                        it.  
-                        Moreover, JavaScript frameworks like Angular, Vue and React dominate the web development
-                        community nowadays, jQuery has been losing its popularity as most of these modern
-                        frameworks have a better performance...
+                        <b>Note: </b> <br />
+                        If you dont specify the some of the property in options, it wont display
                       </p>
                     </GridItem>
                   </GridContainer>
@@ -219,9 +218,8 @@ export default function VanillaJavascriptArticle(props) {
                     <GridItem xs={12} sm={12} md={12}>
                       <h6>Reference:</h6>
                       <ol>
-                        <li>https://snipcart.com/blog/learn-vanilla-javascript-before-using-js-frameworks</li>
-                        <li>https://designmodo.com/bootstrap-5/</li>
-                        <li>and some Stack Overflow...</li>
+                        <li>https://www.mongodb.com/nosql-explained/nosql-vs-sql</li>
+                        <li>https://www.mongodb.com/scale/nosql-vs-relational-databases</li>
                       </ol>
                     </GridItem>
                     <GridItem xs={12} sm={12} md={12} style={{ textAlign: 'center', marginTop: 20 }}>

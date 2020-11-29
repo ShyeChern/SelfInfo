@@ -15,7 +15,10 @@ import JavascriptDateTimeFormatArticle from "views/ArticlePage/Article/Javascrip
 import GitArticle from "views/ArticlePage/Article/GitArticle.js";
 import HttpRequestMethodArticle from "views/ArticlePage/Article/HttpRequestMethodArticle.js";
 import VanillaJavascriptArticle from "views/ArticlePage/Article/VanillaJavascriptArticle.js";
+import SqlVsNosqlArticle from "views/ArticlePage/Article/SqlVsNosqlArticle.js";
 import ScrollToTop from "util/scrollToTop";
+
+import Finance from "views/Finance/Finance.js";
 
 export default function App() {
 
@@ -36,6 +39,9 @@ export default function App() {
                     <Route exact path="/article/http-request-method" component={HttpRequestMethodArticle} />
                     <Route exact path="/article/git" component={GitArticle} />
                     <Route exact path="/article/vanilla-javascript" component={VanillaJavascriptArticle} />
+                    <Route exact path="/article/sql-vs-nosql" component={SqlVsNosqlArticle} />
+
+                    <Route exact path="/finance" component={Finance} />
 
 
                     <Route exact path="/component" component={Components} />

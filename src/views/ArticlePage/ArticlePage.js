@@ -23,10 +23,6 @@ import ArticleSections from "./Sections/ArticleSections";
 
 const useStyles = makeStyles(styles);
 
-// back to landing page button or go to next post?
-
-// write blog post or something about problem how you solve etc title detail date time source
-
 export default function PostPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
