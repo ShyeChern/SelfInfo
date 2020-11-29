@@ -73,7 +73,6 @@ export default function FinancePage(props) {
             </tr>
           </thead>
           <tbody>
-
             {
               data.prices.map((value, index) => {
                 return (
