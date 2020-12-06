@@ -38,7 +38,8 @@ export default function FinancePage(props) {
       alert('input tickersymbol');
       setIsLoading(false);
     } else {
-      fetch(baseUrl + 'getHistoricalData?symbol=' + tickerSymbol, {
+
+      fetch(baseUrl, {
         method: 'get',
         headers: {
           Accept: 'application/json',
@@ -47,17 +48,10 @@ export default function FinancePage(props) {
         // body: JSON.stringify(""),
       }).then((response) => response.json())
         .then((responseJson) => {
-          if (responseJson.status === 'fail') {
-            alert('fail');
-          } else {
-            console.log(responseJson.data);
-            setData(responseJson.data);
-          }
-          setIsLoading(false);
+          alert(responseJson);
         })
         .catch((error) => {
           alert(error);
-          setIsLoading(false);
         });
     }
   }
@@ -97,8 +91,6 @@ export default function FinancePage(props) {
       )
     }
   }
-
-
 
   if (isLoading) {
     return (

@@ -18,40 +18,77 @@ import VanillaJavascriptArticle from "views/ArticlePage/Article/VanillaJavascrip
 import SqlVsNosqlArticle from "views/ArticlePage/Article/SqlVsNosqlArticle.js";
 import ScrollToTop from "util/scrollToTop";
 
+import LoginPage from "views/LoginPage/LoginPage.js";
 import Finance from "views/Finance/Finance.js";
+
+import Cookies from 'js-cookie'
+
 
 export default function App() {
 
+
+  // session expire after 30 minutes
+  Cookies.set('test', 'randomgenerate cookie session', {
+    expires: new Date(new Date().getTime() + 30 * 60 * 1000)
+  });
+  
+
+  Cookies.remove('shyechern');
+
+  const checkCookie = () => {
+    if (Cookies.get('shyechern') !== undefined) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  const PrivateRoute = ({ children, ...rest }) => {
+    let isLogin = checkCookie();
     return (
-        <div>
-            <Router>
-                <ScrollToTop />
-                <Switch>
-                    <Route exact path="/pagenotfound" component={PageNotFoundPage} />
-                    <Route exact path="/contact" component={ContactPage}></Route>
-                    <Route exact path="/project" component={ProjectPage}></Route>
-                    <Route exact path="/" component={LandingPage} />
-                    <Route exact path="/profile" component={ProfilePage} />
-                    <Route exact path="/article" component={ArticlePage} />
+      <Route {...rest} render={() => isLogin ? (children) : (<Redirect to={{ pathname: "/login" }} />)} />
+    );
+  }
 
-                    <Route exact path="/article/react-hooks" component={ReactHooksArticle} />
-                    <Route exact path="/article/javascript-date-time-format" component={JavascriptDateTimeFormatArticle} />
-                    <Route exact path="/article/http-request-method" component={HttpRequestMethodArticle} />
-                    <Route exact path="/article/git" component={GitArticle} />
-                    <Route exact path="/article/vanilla-javascript" component={VanillaJavascriptArticle} />
-                    <Route exact path="/article/sql-vs-nosql" component={SqlVsNosqlArticle} />
-
-                    <Route exact path="/finance" component={Finance} />
+  const LoginRoute = ({ children, ...rest }) => {
+    let isLogin = checkCookie();
+    return (
+      <Route {...rest} render={() => isLogin ? (<Redirect to={{ pathname: "/finance" }} />) : (children)} />
+    );
+  }
 
 
-                    <Route exact path="/component" component={Components} />
-                    {/* capture invalid route */}
-                    <Route render={() => <Redirect to={{ pathname: "/pagenotfound" }} />} />
-                </Switch>
+  return (
+    <div>
+      <Router>
+        <ScrollToTop />
+        <Switch>
+          <Route exact path="/pagenotfound" component={PageNotFoundPage} />
+          <Route exact path="/contact" component={ContactPage}></Route>
+          <Route exact path="/project" component={ProjectPage}></Route>
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/profile" component={ProfilePage} />
+          <Route exact path="/article" component={ArticlePage} />
 
-            </Router>
-        </div>
-    )
+          <Route exact path="/article/react-hooks" component={ReactHooksArticle} />
+          <Route exact path="/article/javascript-date-time-format" component={JavascriptDateTimeFormatArticle} />
+          <Route exact path="/article/http-request-method" component={HttpRequestMethodArticle} />
+          <Route exact path="/article/git" component={GitArticle} />
+          <Route exact path="/article/vanilla-javascript" component={VanillaJavascriptArticle} />
+          <Route exact path="/article/sql-vs-nosql" component={SqlVsNosqlArticle} />
+
+          <LoginRoute exact path="/login" ><LoginPage /> </LoginRoute>
+          <PrivateRoute exact path="/finance"><Finance /> </PrivateRoute>
+
+
+          <Route exact path="/component" component={Components} />
+          {/* capture invalid route */}
+          <Route render={() => <Redirect to={{ pathname: "/pagenotfound" }} />} />
+        </Switch>
+
+      </Router>
+    </div>
+  )
 
 
 }
