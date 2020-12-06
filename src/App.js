@@ -30,11 +30,13 @@ export default function App() {
   // session expire after 30 minutes
   Cookies.set('test', 'randomgenerate cookie session', {
     expires: new Date(new Date().getTime() + 30 * 60 * 1000),
-    secure:true,
+    httpOnly: false,
+    sameSite: 'none',
+    secure: true
   });
-  
 
-  Cookies.remove('shyechern');
+
+  // Cookies.remove('shyechern');
 
   const checkCookie = () => {
     if (Cookies.get('shyechern') !== undefined) {
