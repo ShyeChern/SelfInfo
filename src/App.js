@@ -29,7 +29,8 @@ export default function App() {
 
   // session expire after 30 minutes
   Cookies.set('test', 'randomgenerate cookie session', {
-    expires: new Date(new Date().getTime() + 30 * 60 * 1000)
+    expires: new Date(new Date().getTime() + 30 * 60 * 1000),
+    secure:true,
   });
   
 
