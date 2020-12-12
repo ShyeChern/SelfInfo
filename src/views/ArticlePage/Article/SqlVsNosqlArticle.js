@@ -177,7 +177,7 @@ export default function SqlVSNosqlArticle(props) {
                       <hr />
                       <h3>Sample CRUD</h3>
                       <p className={article.text} style={style.highlight}>
-                        The following example shows the sample CRUD (Create, Read, Update, Delete) using 
+                        The following example shows the sample CRUD (Create, Read, Update, Delete) using
                         MySQL Database (SQL) and MongoDB (NoSQL)
                       </p>
                       <h4>1. Create/Insert</h4>
