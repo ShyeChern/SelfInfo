@@ -15,7 +15,7 @@ const TheoryData = [
     {
         title: "SQL vs NoSQL",
         cover: require('assets/img/article/theory/sql-vs-nosql.jpg'),
-        date: "28 Nov 2020",
+        date: "13 Dec 2020",
         link: "sql-vs-nosql"
     },
 ];

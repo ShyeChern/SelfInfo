@@ -25,14 +25,20 @@ const barStyle = {
 };
 
 const skillData = [
-    { name: "Javascript", value: 80 },
-    { name: "React", value: 70 },
-    { name: "React Native", value: 80 },
-    { name: "PHP", value: 80 },
-    { name: "HTML", value: 70 },
-    { name: "CSS", value: 60 },
-    { name: "MySQL", value: 70 },
-    { name: "Java", value: 70 }
+    { name: "HTML, CSS, Bootstrap", value: 80 },
+    { name: "React", value: 80 },
+    { name: "PHP (Laravel & CodeIgniter)", value: 90 },
+    { name: "Javascript", value: 95 },
+    { name: "Java", value: 70 },
+    { name: "React Native", value: 85 },
+    { name: "SQL", value: 90 },
+    { name: "Node.js", value: 85 },
+    { name: "MongoDB", value: 80 },
+    { name: "Native Android", value: 60 },
+    { name: "Firebase", value: 70 },
+    { name: "cPanel", value: 80 },
+    { name: "Heroku", value: 80 },
+    { name: "AWS", value: 70 },
 ];
 
 const Bar = ({ name, value }) => {

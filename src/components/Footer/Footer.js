@@ -72,7 +72,7 @@ export default function Footer(props) {
         <div className={classes.right}>
           made by{" "}
           <a
-            href="#"
+            href="https://shyechern.herokuapp.com/contact"
             className={aClasses}
           >
             Shye Chern

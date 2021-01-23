@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 // major page
 import ContactPage from "views/ContactPage/ContactPage.js";
 import ProjectPage from "views/ProjectPage/ProjectPage.js";
-import Components from "views/Components/Components.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import ArticlePage from "views/ArticlePage/ArticlePage.js";
@@ -39,7 +38,6 @@ export default function App() {
           <Route exact path="/article/vanilla-javascript" component={VanillaJavascriptArticle} />
           <Route exact path="/article/sql-vs-nosql" component={SqlVsNosqlArticle} />
 
-          <Route exact path="/component" component={Components} />
           {/* capture invalid route */}
           <Route render={() => <Redirect to={{ pathname: "/pagenotfound" }} />} />
         </Switch>

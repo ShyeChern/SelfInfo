@@ -39,13 +39,26 @@ const WebData = [
         title: "goMed",
         description: "A medical consultation website. User can check the disease information and consult with doctor through live chat.",
         cover: require('assets/img/project/web/gomed/gomed_cover.jpg'),
-        language: "HTML/CSS/Javascript/PHP",
+        language: "HTML, CSS, Javascript, PHP, SQL",
         image: [
             require('assets/img/project/web/gomed/gomed_1.png'),
             require('assets/img/project/web/gomed/gomed_2.png'),
             require('assets/img/project/web/gomed/gomed_3.png'),
             require('assets/img/project/web/gomed/gomed_4.png'),
             require('assets/img/project/web/gomed/gomed_5.png')
+        ]
+    },
+    {
+        title: "Ecget",
+        description: "An ecommerce app which focus on delivery product to the customer on demand. Customer can buy their daily necessities while merchant can deliver the product to customer via registered Ecget rider. I am responsible for the web and API development.",
+        cover: require('assets/img/project/web/ecget/ecget_cover.jpg'),
+        language: "HTML, CSS, Javascript, PHP, MySQL",
+        image: [
+            require('assets/img/project/web/ecget/ecget_1.png'),
+            require('assets/img/project/web/ecget/ecget_2.png'),
+            require('assets/img/project/web/ecget/ecget_3.png'),
+            require('assets/img/project/web/ecget/ecget_4.png'),
+            require('assets/img/project/web/ecget/ecget_5.png')
         ]
     },
 ];
@@ -55,7 +68,7 @@ const MobileData = [
         title: "Jomedic",
         description: "A medical consultation application. User can make appointment to consult with doctor via video call or live chat.",
         cover: require('assets/img/project/mobile/jomedic/jomedic_cover.jpg'),
-        language: "React Native/Node.js",
+        language: "React Native, Node.js, SQL",
         image: [
             require('assets/img/project/mobile/jomedic/jomedic_1.jpeg'),
             require('assets/img/project/mobile/jomedic/jomedic_2.jpeg'),
@@ -66,6 +79,21 @@ const MobileData = [
             require('assets/img/project/mobile/jomedic/jomedic_7.jpeg'),
             require('assets/img/project/mobile/jomedic/jomedic_8.jpeg'),
             require('assets/img/project/mobile/jomedic/jomedic_9.jpeg'),
+        ]
+    },
+    {
+        title: "Ecget",
+        description: "An ecommerce app which focus on delivery product to the customer on demand. Customer can buy their daily necessities while merchant can deliver the product to customer via registered Ecget rider. I am responsible for the web and API development.",
+        cover: require('assets/img/project/mobile/ecget/ecget_cover.jpg'),
+        language: "PHP, MySQL",
+        image: [
+            require('assets/img/project/mobile/ecget/ecget_1.jpeg'),
+            require('assets/img/project/mobile/ecget/ecget_2.jpeg'),
+            require('assets/img/project/mobile/ecget/ecget_3.jpeg'),
+            require('assets/img/project/mobile/ecget/ecget_4.jpeg'),
+            require('assets/img/project/mobile/ecget/ecget_5.jpeg'),
+            require('assets/img/project/mobile/ecget/ecget_6.jpeg'),
+            require('assets/img/project/mobile/ecget/ecget_7.jpeg')
         ]
     },
 ];

@@ -117,7 +117,7 @@ export default function SqlVSNosqlArticle(props) {
                 <CardBody>
                   <GridContainer style={{ textAlign: 'center' }} justify="center">
                     <GridItem xs={12} sm={12} md={12}>
-                      <p className={article.date}>Last update on 28 Nov 2020</p>
+                      <p className={article.date}>Last update on 13 Dec 2020</p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
@@ -175,38 +175,67 @@ export default function SqlVSNosqlArticle(props) {
 
                     <GridItem xs={12} sm={12} md={10}>
                       <hr />
-                      <h3>Sample CRUD</h3>
+                      <h3>Sample CRUD of MySQL Database (SQL) and MongoDB (NoSQL)</h3>
                       <p className={article.text} style={style.highlight}>
-                        The following example shows the sample CRUD (Create, Read, Update, Delete) using
-                        MySQL Database (SQL) and MongoDB (NoSQL)
+                        The following example shows the sample CRUD (Create, Read, Update, Delete) using MySQL and MongoDB (with mongoose).
+                        Note that all the programming language used is javascript.
                       </p>
                       <h4>1. Create/Insert</h4>
-                      <Table className={article.text} style={style.highlight} striped bordered hover responsive >
-                        <thead style={{ textAlign: 'center' }}>
-                          <tr>
-                            <th>SQL</th>
-                            <th>NoSQL</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Tabular based design, relational database. Tables with fixed pre-defined columns and datatype, all the rows need to follows the columns datatype standard</td>
-                            <td>Document based design, non-relational database. Collections with dynamic JSON type documents, does not have a fixed column or datatype required</td>
-                          </tr>
-                        </tbody>
-                      </Table>
                       <center>
                         <GridItem xs={12} sm={12} md={10}>
-                          <Gist id="4981cff6cb21818814e5b7c435d0b005" file="LocaleOptions.js" />
+                          <Gist id="0860aa298f0f19d4129072756673b25d" file="Create.js" />
                         </GridItem>
                       </center>
-                      <p>More info about locale parameter =&#62;
-                        <a target='_blank' rel="noopener noreferrer"
-                          href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat'>here</a>
-                      </p>
+                    </GridItem>
+
+                    <GridItem xs={12} sm={12} md={10}>
+                      <hr />
+                      <h4>2. Read/Select</h4>
+                      <center>
+                        <GridItem xs={12} sm={12} md={10}>
+                          <Gist id="0860aa298f0f19d4129072756673b25d" file="Read.js" />
+                        </GridItem>
+                      </center>
+                    </GridItem>
+
+                    <GridItem xs={12} sm={12} md={10}>
+                      <hr />
+                      <h4>3. Update</h4>
+                      <center>
+                        <GridItem xs={12} sm={12} md={10}>
+                          <Gist id="0860aa298f0f19d4129072756673b25d" file="Update.js" />
+                        </GridItem>
+                      </center>
+                    </GridItem>
+
+                    <GridItem xs={12} sm={12} md={10}>
+                      <hr />
+                      <h4>4. Delete</h4>
+                      <center>
+                        <GridItem xs={12} sm={12} md={10}>
+                          <Gist id="0860aa298f0f19d4129072756673b25d" file="Delete.js" />
+                        </GridItem>
+                      </center>
+                    </GridItem>
+
+                    <GridItem xs={12} sm={12} md={10}>
+                      <hr />
+                      <h4>5. Transaction</h4>
+                      <center>
+                        <GridItem xs={12} sm={12} md={10}>
+                          <Gist id="0860aa298f0f19d4129072756673b25d" file="Transaction.js" />
+                        </GridItem>
+                      </center>
+                    </GridItem>
+
+                    <GridItem xs={12} sm={12} md={10}>
+                      <hr />
+                      <h4>Conclusion</h4>
                       <p className={article.text} style={style.highlight}>
-                        <b>Note: </b> <br />
-                        If you dont specify the some of the property in options, it wont display
+                        The samples above just a very little part of SQL and NoSQL. There are much more of thing
+                        that can be achieve in both of these sql.
+                        In conclusion, there are nothing good or bad in both of the sql and nosql. It just which one is more suitable
+                        for you. Both of these database have their own benefit.
                       </p>
                     </GridItem>
                   </GridContainer>
