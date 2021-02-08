@@ -34,11 +34,11 @@ const skillData = [
     { name: "SQL", value: 90 },
     { name: "Node.js", value: 85 },
     { name: "MongoDB", value: 80 },
+    { name: "TypeScript", value: 60 },
     { name: "Native Android", value: 60 },
     { name: "Firebase", value: 70 },
     { name: "cPanel", value: 80 },
     { name: "Heroku", value: 80 },
-    { name: "AWS", value: 70 },
 ];
 
 const Bar = ({ name, value }) => {

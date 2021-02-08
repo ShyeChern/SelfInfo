@@ -45,6 +45,12 @@ const TechnicalData = [
         date: "27 Nov 2020",
         link: "vanilla-javascript"
     },
+    {
+        title: "Sort Method",
+        cover: require('assets/img/article/technical/comparison-sort.png'),
+        date: "08 Feb 2021",
+        link: "sort-method"
+    },
 ];
 
 const Article = ({ data }) => {

@@ -5,6 +5,7 @@ const articleOrderData = [
     '/article/git',
     '/article/vanilla-javascript',
     '/article/sql-vs-nosql',
+    '/article/sort-method'
 ];
 
 export default function articleOrder(currentPath) {

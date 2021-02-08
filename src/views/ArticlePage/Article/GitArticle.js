@@ -113,7 +113,7 @@ export default function GitArticle(props) {
                 <CardBody>
                   <GridContainer style={{ textAlign: 'center' }} justify="center">
                     <GridItem xs={12} sm={12} md={12}>
-                      <p className={article.date}>Last update on 29 Nov 2020</p>
+                      <p className={article.date}>Last update on 08 Feb 2021</p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
@@ -211,6 +211,15 @@ export default function GitArticle(props) {
                         Merge branch into current branch. If you current pointing at the master branch,
                         <b><i> git merge [branch]</i></b> will merge the <b><i>[branch]</i></b> into master branch.
                       </p>
+                      <p className={article.highlightText} style={style.highlight}>
+                        <b>git update-index --assume-unchanged [path-to-file]<br />
+                         git update-index --no-assume-unchanged [path-to-file]</b>
+                      </p>
+                      <p className={article.text}>
+                        <b>Explanation: </b>
+                        Untrack the file changes for temporary with <b><i>--assumes-unchanged</i></b>, and then continue update the changes
+                        with <b><i>--no--assumes-unchanged</i></b>. Can be use to make some changes to file locally without affecting the source. 
+                      </p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
@@ -220,8 +229,8 @@ export default function GitArticle(props) {
                         Gitignore (.gitignore) is a plain text file where each line in file contains a pattern for files/directories to
                         ignore. The files/directories will then not staged and committed to the repository. Gitignore always used to
                         ignore files like node_modules, .env, log and some other file which is sensitive or not related to the live
-                        project. Note that files already tracked by Git are not affected when you add it into gitignore, so you have 
-                        to use one of these commands to untrack your file (<b><i>git rm --cached [file]</i></b>,
+                        project. Note that files already tracked by Git are not affected when you add it into gitignore, so you have
+                        to use one of these commands to untrack your file (<b><i>git rm --cached [path-to-file]</i></b>,
                         &nbsp;<b><i>git rm -r --cached [folder]</i></b>)
                       </p>
                     </GridItem>
