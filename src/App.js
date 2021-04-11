@@ -15,7 +15,8 @@ import GitArticle from "views/ArticlePage/Article/GitArticle.js";
 import HttpRequestMethodArticle from "views/ArticlePage/Article/HttpRequestMethodArticle.js";
 import VanillaJavascriptArticle from "views/ArticlePage/Article/VanillaJavascriptArticle.js";
 import SqlVsNosqlArticle from "views/ArticlePage/Article/SqlVsNosqlArticle.js";
-import SortMethod from "views/ArticlePage/Article/SortMethod.js";
+import SortMethodArticle from "views/ArticlePage/Article/SortMethodArticle.js";
+import JavascriptArrayMethodArticle from "views/ArticlePage/Article/JavascriptArrayMethodArticle.js";
 import ScrollToTop from "util/scrollToTop";
 
 export default function App() {
@@ -38,7 +39,8 @@ export default function App() {
           <Route exact path="/article/git" component={GitArticle} />
           <Route exact path="/article/vanilla-javascript" component={VanillaJavascriptArticle} />
           <Route exact path="/article/sql-vs-nosql" component={SqlVsNosqlArticle} />
-          <Route exact path="/article/sort-method" component={SortMethod} />
+          <Route exact path="/article/sort-method" component={SortMethodArticle} />
+          <Route exact path="/article/javascript-array-method" component={JavascriptArrayMethodArticle} />
 
           {/* capture invalid route */}
           <Route render={() => <Redirect to={{ pathname: "/pagenotfound" }} />} />

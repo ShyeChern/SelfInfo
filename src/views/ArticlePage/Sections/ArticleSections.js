@@ -51,6 +51,12 @@ const TechnicalData = [
         date: "08 Feb 2021",
         link: "sort-method"
     },
+    {
+        title: "Javascript Array Method",
+        cover: require('assets/img/article/technical/javascript-array-method.jpeg'),
+        date: "08 March 2021",
+        link: "javascript-array-method"
+    },
 ];
 
 const Article = ({ data }) => {

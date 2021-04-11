@@ -113,7 +113,7 @@ export default function GitArticle(props) {
                 <CardBody>
                   <GridContainer style={{ textAlign: 'center' }} justify="center">
                     <GridItem xs={12} sm={12} md={12}>
-                      <p className={article.date}>Last update on 08 Feb 2021</p>
+                      <p className={article.date}>Last update on 16 Feb 2021</p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
@@ -194,6 +194,7 @@ export default function GitArticle(props) {
                         List down all the branch in local repository. User with <b><i>git branch -r</i></b> to view list of branch
                         in remote. There are more branch argument availale....
                       </p>
+
                       <p className={article.highlightText} style={style.highlight}>
                         <b>git checkout [branch]</b>
                       </p>
@@ -203,6 +204,7 @@ export default function GitArticle(props) {
                         is not exist. If branch is not in local yet (in remote) use git pull to pull down the branch then only
                         checkout to switch to it.
                       </p>
+
                       <p className={article.highlightText} style={style.highlight}>
                         <b>git merge [branch]</b>
                       </p>
@@ -211,6 +213,7 @@ export default function GitArticle(props) {
                         Merge branch into current branch. If you current pointing at the master branch,
                         <b><i> git merge [branch]</i></b> will merge the <b><i>[branch]</i></b> into master branch.
                       </p>
+
                       <p className={article.highlightText} style={style.highlight}>
                         <b>git update-index --assume-unchanged [path-to-file]<br />
                          git update-index --no-assume-unchanged [path-to-file]</b>
@@ -218,7 +221,25 @@ export default function GitArticle(props) {
                       <p className={article.text}>
                         <b>Explanation: </b>
                         Untrack the file changes for temporary with <b><i>--assumes-unchanged</i></b>, and then continue update the changes
-                        with <b><i>--no--assumes-unchanged</i></b>. Can be use to make some changes to file locally without affecting the source. 
+                        with <b><i>--no--assumes-unchanged</i></b>. Can be use to make some changes to file locally without affecting the source.
+                      </p>
+
+                      <p className={article.highlightText} style={style.highlight}>
+                        <b>git stash</b>
+                      </p>
+                      <p className={article.text}>
+                        <b>Explanation: </b>
+                        Save all your changes (staged and unstaged) for later use and then revert them from your working directory.
+                        Use when you want to record your local changes and go back to previous commit. 
+                        Oftenly use to make some experimental changes.
+                      </p>
+
+                      <p className={article.highlightText} style={style.highlight}>
+                        <b>git stash pop</b>
+                      </p>
+                      <p className={article.text}>
+                        <b>Explanation: </b>
+                        Re-apply the previous stashed changes to your current working directory.
                       </p>
                     </GridItem>
 

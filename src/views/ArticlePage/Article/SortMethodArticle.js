@@ -50,7 +50,7 @@ const style = {
   }
 }
 
-export default function SortMethod(props) {
+export default function SortMethodArticle(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   setTimeout(function () {
     setCardAnimation("");
