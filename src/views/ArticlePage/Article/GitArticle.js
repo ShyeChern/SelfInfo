@@ -113,7 +113,7 @@ export default function GitArticle(props) {
                 <CardBody>
                   <GridContainer style={{ textAlign: 'center' }} justify="center">
                     <GridItem xs={12} sm={12} md={12}>
-                      <p className={article.date}>Last update on 16 Feb 2021</p>
+                      <p className={article.date}>Last update on 29 Apr 2021</p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
@@ -196,12 +196,12 @@ export default function GitArticle(props) {
                       </p>
 
                       <p className={article.highlightText} style={style.highlight}>
-                        <b>git checkout [branch]</b>
+                        <b>git checkout [branch/commit]</b>
                       </p>
                       <p className={article.text}>
                         <b>Explanation: </b>
-                        Switched to another branch. If use with <b><i>git checkout -b [branch]</i></b> will create the branch if it
-                        is not exist. If branch is not in local yet (in remote) use git pull to pull down the branch then only
+                        Switched to another branch or commit. If use with <b><i>git checkout -b [branch]</i></b> will create the branch if
+                        it is not exist. If branch is not in local yet (in remote) use git pull/fetch to pull down the branch then only
                         checkout to switch to it.
                       </p>
 
@@ -230,7 +230,7 @@ export default function GitArticle(props) {
                       <p className={article.text}>
                         <b>Explanation: </b>
                         Save all your changes (staged and unstaged) for later use and then revert them from your working directory.
-                        Use when you want to record your local changes and go back to previous commit. 
+                        Use when you want to record your local changes and go back to previous commit.
                         Oftenly use to make some experimental changes.
                       </p>
 
@@ -240,6 +240,17 @@ export default function GitArticle(props) {
                       <p className={article.text}>
                         <b>Explanation: </b>
                         Re-apply the previous stashed changes to your current working directory.
+                      </p>
+
+                      <p className={article.highlightText} style={style.highlight}>
+                        <b>git reset --[state] [commit]</b>
+                      </p>
+                      <p className={article.text}>
+                        <b>Explanation: </b>
+                        There are three states available which are soft, mixed (default) and hard. Soft uncommit your changes,
+                        mixed uncommit and unstage your changes while hard uncommit, unstage and delete your changes. For example,
+                        when you want to revert all your changes to specific commit, you can use <b><i>git reset --hard eucdf84</i></b>
+                        to back to the commit.
                       </p>
                     </GridItem>
 
