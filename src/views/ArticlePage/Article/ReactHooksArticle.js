@@ -116,7 +116,7 @@ export default function ReactHooksArticle(props) {
                 <CardBody>
                   <GridContainer style={{ textAlign: 'center' }} justify="center">
                     <GridItem xs={12} sm={12} md={12}>
-                      <p className={article.date}>Last update on 1 Nov 2020</p>
+                      <p className={article.date}>Last update on 9 May 2021</p>
                     </GridItem>
 
                     <GridItem xs={12} sm={12} md={10}>
@@ -190,7 +190,8 @@ export default function ReactHooksArticle(props) {
                       <p className={article.text} style={style.highlight}>
                         useContext allow us to pass variable without using props as long as the
                         child component is still inside the parent component.
-                        It make ease of passing data from level to level in the component.
+                        It make ease of passing data from level to level in the component. This hook can combine
+                        with useReducer to perform logic to update the variable from child component to parent component.
                       </p>
                       <p className={article.highlightText} style={style.highlight}>
                         <b>Syntax: </b><br />
@@ -217,7 +218,8 @@ export default function ReactHooksArticle(props) {
                       <h3>4. useReducer</h3>
                       <p className={article.text} style={style.highlight}>
                         An advanced version of useState. It is used when we need to execute a complex logic or state
-                        action.
+                        action. This hook can combine with useContext to perform logic to update the variable from child 
+                        component to parent component.
                       </p>
                       <p className={article.highlightText} style={style.highlight}>
                         <b>Syntax: </b><br />
@@ -242,7 +244,11 @@ export default function ReactHooksArticle(props) {
                       <h3>5. useMemo, useCallback</h3>
                       <p className={article.text} style={style.highlight}>
                         Hooks that help to store a callback or result of a callback. The value will not change unless the
-                        value in array of dependencies is changed. It is a technique to speed up program.
+                        value in array of dependencies is changed. By using these 
+                        hooks, it avoid re-render of the callback everytime. It is recommend to use these hooks if there are large 
+                        data or computation in the function that depend on certain value. 
+                        For example, useMemo 
+                        use to store the calculation result while useCallback use to perform some task like export csv.
                       </p>
                       <p className={article.highlightText} style={style.highlight}>
                         <b>Syntax: </b><br />
